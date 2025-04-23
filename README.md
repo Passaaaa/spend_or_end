@@ -1,6 +1,6 @@
-# Spend it All
+# Spend or end
 
-**Spend it All** is a 2D platformer made with **Godot 4.2.1** for the **Fuck Capitalism Game Jam**.
+**Spend or end** is a 2D platformer made with **Godot 4.2.1** for the **Fuck Capitalism Game Jam**.
 
 In this short but meaningful adventure, you collect coins across levels and face tempting opportunities to spend them on flashy but useless items. Every time you give in, the next level gets harder. Will you resist? Or will you pay the price?
 
