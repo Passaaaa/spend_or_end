@@ -12,6 +12,9 @@ size = Vector2(236, 20)
 position = Vector2(171, 444)
 speed = 400.0
 
+[node name="Camera2D" type="Camera2D" parent="Player"]
+limit_bottom = 650
+
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
