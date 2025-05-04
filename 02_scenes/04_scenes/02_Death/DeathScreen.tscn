@@ -1,0 +1,42 @@
+[gd_scene load_steps=2 format=3 uid="uid://dae2rl4asaybh"]
+
+[ext_resource type="Script" path="res://03_scripts/03_UI/DeathScreen.gd" id="1_a6acy"]
+
+[node name="DeathScreen" type="CanvasLayer"]
+script = ExtResource("1_a6acy")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.396078, 0.396078, 0.396078, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -220.0
+offset_right = 280.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="Label_muerto" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "HAS MUERTO"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button_reiniciar" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "REINICIAR"
+
+[node name="Button_salir" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "SALIR"
+
+[connection signal="pressed" from="VBoxContainer/Button_reiniciar" to="." method="_on_button_reiniciar_pressed"]
+[connection signal="pressed" from="VBoxContainer/Button_salir" to="." method="_on_button_salir_pressed"]

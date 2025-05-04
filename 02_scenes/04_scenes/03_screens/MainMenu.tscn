@@ -1,0 +1,126 @@
+[gd_scene load_steps=2 format=3 uid="uid://cfcmhdj054sqe"]
+
+[ext_resource type="Script" path="res://03_scripts/03_UI/MainMenu.gd" id="1_77v5r"]
+
+[node name="MainMenu" type="CanvasLayer"]
+script = ExtResource("1_77v5r")
+
+[node name="MainPanel" type="Panel" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MainPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 77.0
+offset_bottom = 88.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="MainPanel/VBoxContainer"]
+layout_mode = 2
+text = "SPEND OR END"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button_empezar" type="Button" parent="MainPanel/VBoxContainer"]
+layout_mode = 2
+text = "EMPEZAR"
+
+[node name="Button_opciones" type="Button" parent="MainPanel/VBoxContainer"]
+layout_mode = 2
+text = "OPCIONES"
+
+[node name="Button_salir" type="Button" parent="MainPanel/VBoxContainer"]
+layout_mode = 2
+text = "SALIR"
+
+[node name="TutorialPanel" type="Panel" parent="."]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label_saltoSimple" type="Label" parent="TutorialPanel"]
+layout_mode = 0
+offset_left = 100.0
+offset_top = 500.0
+offset_right = 421.0
+offset_bottom = 523.0
+text = "Presiona (spacebar) para realizar un salto"
+
+[node name="Label_saltoAlto" type="Label" parent="TutorialPanel"]
+layout_mode = 0
+offset_left = 700.0
+offset_top = 500.0
+offset_right = 1084.0
+offset_bottom = 523.0
+text = "Manten (spacebar) para relaizar un salto más alto"
+
+[node name="Button_empezarLvl" type="Button" parent="TutorialPanel"]
+layout_mode = 0
+offset_left = 992.0
+offset_top = 617.0
+offset_right = 1192.0
+offset_bottom = 677.0
+text = "CONTINUAR"
+
+[node name="OpcionesPanel" type="Panel" parent="."]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label_volumenMusica" type="Label" parent="OpcionesPanel"]
+layout_mode = 0
+offset_left = 335.0
+offset_top = 259.0
+offset_right = 375.0
+offset_bottom = 282.0
+text = "Volumen de Musica"
+
+[node name="MusicaSlider" type="HSlider" parent="OpcionesPanel"]
+layout_mode = 0
+offset_left = 400.0
+offset_top = 370.0
+offset_right = 408.0
+offset_bottom = 386.0
+
+[node name="Label2_volumenEfectos" type="Label" parent="OpcionesPanel"]
+layout_mode = 0
+offset_left = 789.0
+offset_top = 261.0
+offset_right = 942.0
+offset_bottom = 284.0
+text = "Volumen de efectos"
+
+[node name="SfxSlider" type="HSlider" parent="OpcionesPanel"]
+layout_mode = 0
+offset_left = 868.0
+offset_top = 363.0
+offset_right = 876.0
+offset_bottom = 379.0
+
+[node name="Button_volver" type="Button" parent="OpcionesPanel"]
+layout_mode = 0
+offset_left = 601.0
+offset_top = 594.0
+offset_right = 670.0
+offset_bottom = 625.0
+text = "VOLVER"
+
+[connection signal="pressed" from="MainPanel/VBoxContainer/Button_empezar" to="." method="_on_button_empezar_pressed"]
+[connection signal="pressed" from="MainPanel/VBoxContainer/Button_opciones" to="." method="_on_button_opciones_pressed"]
+[connection signal="pressed" from="MainPanel/VBoxContainer/Button_salir" to="." method="_on_button_salir_pressed"]
+[connection signal="pressed" from="TutorialPanel/Button_empezarLvl" to="." method="_on_button_empezar_lvl_pressed"]
+[connection signal="pressed" from="OpcionesPanel/Button_volver" to="." method="_on_button_volver_pressed"]
