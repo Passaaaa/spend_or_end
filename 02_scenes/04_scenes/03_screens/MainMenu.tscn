@@ -1,45 +1,96 @@
-[gd_scene load_steps=2 format=3 uid="uid://cfcmhdj054sqe"]
+[gd_scene load_steps=18 format=3 uid="uid://cfcmhdj054sqe"]
 
 [ext_resource type="Script" path="res://03_scripts/03_UI/MainMenu.gd" id="1_77v5r"]
+[ext_resource type="Texture2D" path="res://01_assets/01_sprites/03_UI/Background.png" id="2_qgjhp"]
+[ext_resource type="Texture2D" path="res://01_assets/01_sprites/03_UI/Title.png" id="3_gn24h"]
+[ext_resource type="Texture2D" uid="uid://cs5lkr2wk0jtv" path="res://01_assets/01_sprites/03_UI/BackGif01.png" id="3_nequp"]
+[ext_resource type="Texture2D" path="res://01_assets/01_sprites/03_UI/Empezar.png" id="4_regyy"]
+[ext_resource type="Texture2D" uid="uid://cf5jrht86htey" path="res://01_assets/01_sprites/03_UI/BackGif02.png" id="4_yx8lb"]
+[ext_resource type="Texture2D" path="res://01_assets/01_sprites/03_UI/Opciones.png" id="5_1t867"]
+[ext_resource type="Texture2D" uid="uid://bab6wjngx1l7p" path="res://01_assets/01_sprites/03_UI/EmpezarPressed.png" id="5_lpky5"]
+[ext_resource type="Texture2D" uid="uid://b7oyq1qj1oyj3" path="res://01_assets/01_sprites/03_UI/Empezar Hovered.png" id="5_vs0m2"]
+[ext_resource type="Texture2D" uid="uid://08e0uhrwx56q" path="res://01_assets/01_sprites/03_UI/BackGif03.png" id="5_wbweq"]
+[ext_resource type="Texture2D" path="res://01_assets/01_sprites/03_UI/Salir.png" id="6_fomvh"]
+[ext_resource type="Texture2D" uid="uid://cdt76t6c30uqf" path="res://01_assets/01_sprites/03_UI/Background02.png" id="6_r320i"]
+[ext_resource type="Texture2D" uid="uid://3k7id4mstwxq" path="res://01_assets/01_sprites/03_UI/OpcionesPressed.png" id="8_uk86y"]
+[ext_resource type="Texture2D" uid="uid://d0uv7gvn3xp8a" path="res://01_assets/01_sprites/03_UI/OpcionesHovered.png" id="9_n4jg1"]
+[ext_resource type="Texture2D" uid="uid://2idbhj6a5pyt" path="res://01_assets/01_sprites/03_UI/SalirPressed.png" id="11_s01ie"]
+[ext_resource type="Texture2D" uid="uid://bfc75xiugt4sl" path="res://01_assets/01_sprites/03_UI/SalirHovered.png" id="12_beful"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_j4gqh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_nequp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_yx8lb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_wbweq")
+}],
+"loop": true,
+"name": &"default",
+"speed": 3.0
+}]
 
 [node name="MainMenu" type="CanvasLayer"]
 script = ExtResource("1_77v5r")
 
-[node name="MainPanel" type="Panel" parent="."]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="Background" type="TextureRect" parent="."]
+offset_right = 1280.0
+offset_bottom = 720.0
+texture = ExtResource("2_qgjhp")
+expand_mode = 1
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MainPanel"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_right = 77.0
-offset_bottom = 88.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="BackGift" type="AnimatedSprite2D" parent="Background"]
+position = Vector2(640, 360)
+scale = Vector2(0.666667, 0.666667)
+sprite_frames = SubResource("SpriteFrames_j4gqh")
+autoplay = "default"
+frame_progress = 0.740623
+
+[node name="TextureRect" type="TextureRect" parent="Background"]
+offset_right = 1280.0
+offset_bottom = 720.0
+texture = ExtResource("6_r320i")
+expand_mode = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Background"]
+clip_contents = true
+offset_left = 426.5
+offset_top = 60.0
+offset_right = 1036.5
+offset_bottom = 916.0
+scale = Vector2(0.7, 0.7)
 alignment = 1
 
-[node name="Label" type="Label" parent="MainPanel/VBoxContainer"]
+[node name="TextureRect" type="TextureRect" parent="Background/VBoxContainer"]
 layout_mode = 2
-text = "SPEND OR END"
-horizontal_alignment = 1
-vertical_alignment = 1
+texture = ExtResource("3_gn24h")
+stretch_mode = 5
 
-[node name="Button_empezar" type="Button" parent="MainPanel/VBoxContainer"]
+[node name="Button_empezar" type="TextureButton" parent="Background/VBoxContainer"]
 layout_mode = 2
-text = "EMPEZAR"
+texture_normal = ExtResource("4_regyy")
+texture_pressed = ExtResource("5_lpky5")
+texture_hover = ExtResource("5_vs0m2")
+stretch_mode = 3
 
-[node name="Button_opciones" type="Button" parent="MainPanel/VBoxContainer"]
+[node name="Button_opciones" type="TextureButton" parent="Background/VBoxContainer"]
 layout_mode = 2
-text = "OPCIONES"
+texture_normal = ExtResource("5_1t867")
+texture_pressed = ExtResource("8_uk86y")
+texture_hover = ExtResource("9_n4jg1")
+stretch_mode = 3
 
-[node name="Button_salir" type="Button" parent="MainPanel/VBoxContainer"]
+[node name="Button_salir" type="TextureButton" parent="Background/VBoxContainer"]
 layout_mode = 2
-text = "SALIR"
+toggle_mode = true
+texture_normal = ExtResource("6_fomvh")
+texture_pressed = ExtResource("11_s01ie")
+texture_hover = ExtResource("12_beful")
+stretch_mode = 3
 
 [node name="TutorialPanel" type="Panel" parent="."]
 visible = false
@@ -119,8 +170,8 @@ offset_right = 670.0
 offset_bottom = 625.0
 text = "VOLVER"
 
-[connection signal="pressed" from="MainPanel/VBoxContainer/Button_empezar" to="." method="_on_button_empezar_pressed"]
-[connection signal="pressed" from="MainPanel/VBoxContainer/Button_opciones" to="." method="_on_button_opciones_pressed"]
-[connection signal="pressed" from="MainPanel/VBoxContainer/Button_salir" to="." method="_on_button_salir_pressed"]
+[connection signal="pressed" from="Background/VBoxContainer/Button_empezar" to="." method="_on_button_empezar_pressed"]
+[connection signal="pressed" from="Background/VBoxContainer/Button_opciones" to="." method="_on_button_opciones_pressed"]
+[connection signal="pressed" from="Background/VBoxContainer/Button_salir" to="." method="_on_button_salir_pressed"]
 [connection signal="pressed" from="TutorialPanel/Button_empezarLvl" to="." method="_on_button_empezar_lvl_pressed"]
 [connection signal="pressed" from="OpcionesPanel/Button_volver" to="." method="_on_button_volver_pressed"]

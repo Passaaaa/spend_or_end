@@ -1,27 +1,27 @@
 extends CanvasLayer
 
-@onready var main_panel = $MainPanel
+@onready var Background = $Background
 @onready var tutorial_panel = $TutorialPanel
 @onready var opciones_panel = $OpcionesPanel
 @onready var music_slider = $OpcionesPanel/MusicSlider
 @onready var sfx_slider = $OpcionesPanel/SfxSlider
 
 func _ready():
-	main_panel.visible = true
+	Background.visible = true
 	tutorial_panel.visible = false
 	opciones_panel.visible = false
 	
 func _on_button_empezar_pressed():
 	tutorial_panel.visible = true
-	main_panel.visible = false
+	Background.visible = false
 
 func _on_button_opciones_pressed():
 	opciones_panel.visible = true
-	main_panel.visible = false
+	Background.visible = false
 	
 func _on_button_volver_pressed():
 	opciones_panel.visible = false
-	main_panel.visible = true
+	Background.visible = true
 
 func _on_button_empezar_lvl_pressed():
 	# Cambia a la escena del nivel 1

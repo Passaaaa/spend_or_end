@@ -1,6 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://bksxhw20l3ihj"]
+[gd_scene load_steps=8 format=3 uid="uid://bksxhw20l3ihj"]
 
-[ext_resource type="PackedScene" uid="uid://c11a4hfi1ko2u" path="res://02_scenes/01_characters/Player.tscn" id="1_8giqc"]
+[ext_resource type="PackedScene" uid="uid://c11a4hfi1ko2u" path="res://02_scenes/01_characters/player.tscn" id="1_8giqc"]
+[ext_resource type="Texture2D" uid="uid://5m2lscdegx7g" path="res://01_assets/01_sprites/02_environments/Ciudad.png" id="1_chm07"]
 [ext_resource type="PackedScene" uid="uid://dae2rl4asaybh" path="res://02_scenes/04_scenes/02_Death/DeathScreen.tscn" id="3_vq1li"]
 [ext_resource type="PackedScene" uid="uid://d3xlshy53rjlm" path="res://02_scenes/02_items/pinchos.tscn" id="4_kiep1"]
 [ext_resource type="Texture2D" uid="uid://rrjfuilrsj86" path="res://01_assets/01_sprites/02_environments/0_Template_Tileset.png" id="5_1qgj4"]
@@ -305,6 +306,55 @@ sources/0 = SubResource("TileSetAtlasSource_s0ylt")
 
 [node name="Level1" type="Node2D"]
 
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = -264.0
+offset_right = 1016.0
+offset_bottom = 720.0
+texture = ExtResource("1_chm07")
+expand_mode = 1
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+offset_left = 1016.0
+offset_right = 2296.0
+offset_bottom = 720.0
+texture = ExtResource("1_chm07")
+expand_mode = 1
+
+[node name="TextureRect3" type="TextureRect" parent="."]
+offset_left = 2296.0
+offset_right = 3576.0
+offset_bottom = 720.0
+texture = ExtResource("1_chm07")
+expand_mode = 1
+
+[node name="TextureRect4" type="TextureRect" parent="."]
+offset_left = 3576.0
+offset_right = 4856.0
+offset_bottom = 720.0
+texture = ExtResource("1_chm07")
+expand_mode = 1
+
+[node name="TextureRect5" type="TextureRect" parent="."]
+offset_left = 4856.0
+offset_right = 6136.0
+offset_bottom = 720.0
+texture = ExtResource("1_chm07")
+expand_mode = 1
+
+[node name="TextureRect6" type="TextureRect" parent="."]
+offset_left = 6136.0
+offset_right = 7416.0
+offset_bottom = 720.0
+texture = ExtResource("1_chm07")
+expand_mode = 1
+
+[node name="TextureRect7" type="TextureRect" parent="."]
+offset_left = 7416.0
+offset_right = 8696.0
+offset_bottom = 720.0
+texture = ExtResource("1_chm07")
+expand_mode = 1
+
 [node name="DeathScreen" parent="." instance=ExtResource("3_vq1li")]
 visible = false
 
@@ -327,4 +377,6 @@ rebound_time = 0.75
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2(400, -100)
-limit_bottom = 1000
+limit_left = 0
+limit_top = 0
+limit_bottom = 720
