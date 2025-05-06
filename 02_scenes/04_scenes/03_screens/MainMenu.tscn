@@ -1,21 +1,24 @@
-[gd_scene load_steps=18 format=3 uid="uid://cfcmhdj054sqe"]
+[gd_scene load_steps=21 format=3 uid="uid://cfcmhdj054sqe"]
 
 [ext_resource type="Script" path="res://03_scripts/03_UI/MainMenu.gd" id="1_77v5r"]
-[ext_resource type="Texture2D" path="res://01_assets/01_sprites/03_UI/Background.png" id="2_qgjhp"]
-[ext_resource type="Texture2D" path="res://01_assets/01_sprites/03_UI/Title.png" id="3_gn24h"]
+[ext_resource type="Texture2D" uid="uid://d227a8uaur7pc" path="res://01_assets/01_sprites/03_UI/Background.png" id="2_qgjhp"]
+[ext_resource type="Texture2D" uid="uid://cspnj51jwyur3" path="res://01_assets/01_sprites/03_UI/Title.png" id="3_gn24h"]
 [ext_resource type="Texture2D" uid="uid://cs5lkr2wk0jtv" path="res://01_assets/01_sprites/03_UI/BackGif01.png" id="3_nequp"]
-[ext_resource type="Texture2D" path="res://01_assets/01_sprites/03_UI/Empezar.png" id="4_regyy"]
+[ext_resource type="Texture2D" uid="uid://cthej8geo7ylh" path="res://01_assets/01_sprites/03_UI/Empezar.png" id="4_regyy"]
 [ext_resource type="Texture2D" uid="uid://cf5jrht86htey" path="res://01_assets/01_sprites/03_UI/BackGif02.png" id="4_yx8lb"]
-[ext_resource type="Texture2D" path="res://01_assets/01_sprites/03_UI/Opciones.png" id="5_1t867"]
+[ext_resource type="Texture2D" uid="uid://cuorpnvflri2b" path="res://01_assets/01_sprites/03_UI/Opciones.png" id="5_1t867"]
 [ext_resource type="Texture2D" uid="uid://bab6wjngx1l7p" path="res://01_assets/01_sprites/03_UI/EmpezarPressed.png" id="5_lpky5"]
 [ext_resource type="Texture2D" uid="uid://b7oyq1qj1oyj3" path="res://01_assets/01_sprites/03_UI/Empezar Hovered.png" id="5_vs0m2"]
 [ext_resource type="Texture2D" uid="uid://08e0uhrwx56q" path="res://01_assets/01_sprites/03_UI/BackGif03.png" id="5_wbweq"]
-[ext_resource type="Texture2D" path="res://01_assets/01_sprites/03_UI/Salir.png" id="6_fomvh"]
+[ext_resource type="Texture2D" uid="uid://cg27ikts5oepd" path="res://01_assets/01_sprites/03_UI/Salir.png" id="6_fomvh"]
 [ext_resource type="Texture2D" uid="uid://cdt76t6c30uqf" path="res://01_assets/01_sprites/03_UI/Background02.png" id="6_r320i"]
 [ext_resource type="Texture2D" uid="uid://3k7id4mstwxq" path="res://01_assets/01_sprites/03_UI/OpcionesPressed.png" id="8_uk86y"]
 [ext_resource type="Texture2D" uid="uid://d0uv7gvn3xp8a" path="res://01_assets/01_sprites/03_UI/OpcionesHovered.png" id="9_n4jg1"]
 [ext_resource type="Texture2D" uid="uid://2idbhj6a5pyt" path="res://01_assets/01_sprites/03_UI/SalirPressed.png" id="11_s01ie"]
 [ext_resource type="Texture2D" uid="uid://bfc75xiugt4sl" path="res://01_assets/01_sprites/03_UI/SalirHovered.png" id="12_beful"]
+[ext_resource type="Texture2D" uid="uid://8x0rjv0kt4vx" path="res://01_assets/01_sprites/03_UI/Continuar.png" id="17_usoc3"]
+[ext_resource type="Texture2D" uid="uid://bvejhrmmeopk" path="res://01_assets/01_sprites/03_UI/ContinuarPressed.png" id="18_k6xlx"]
+[ext_resource type="Texture2D" uid="uid://7b1yds1iyf6v" path="res://01_assets/01_sprites/03_UI/ContinuarHovered.png" id="19_b3dyj"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_j4gqh"]
 animations = [{
@@ -38,6 +41,7 @@ animations = [{
 script = ExtResource("1_77v5r")
 
 [node name="Background" type="TextureRect" parent="."]
+visible = false
 offset_right = 1280.0
 offset_bottom = 720.0
 texture = ExtResource("2_qgjhp")
@@ -51,6 +55,7 @@ autoplay = "default"
 frame_progress = 0.740623
 
 [node name="TextureRect" type="TextureRect" parent="Background"]
+layout_mode = 0
 offset_right = 1280.0
 offset_bottom = 720.0
 texture = ExtResource("6_r320i")
@@ -58,6 +63,7 @@ expand_mode = 1
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Background"]
 clip_contents = true
+layout_mode = 0
 offset_left = 426.5
 offset_top = 60.0
 offset_right = 1036.5
@@ -93,7 +99,6 @@ texture_hover = ExtResource("12_beful")
 stretch_mode = 3
 
 [node name="TutorialPanel" type="Panel" parent="."]
-visible = false
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -116,13 +121,17 @@ offset_right = 1084.0
 offset_bottom = 523.0
 text = "Manten (spacebar) para relaizar un salto más alto"
 
-[node name="Button_empezarLvl" type="Button" parent="TutorialPanel"]
+[node name="Button_empezarLvl" type="TextureButton" parent="TutorialPanel"]
 layout_mode = 0
-offset_left = 992.0
-offset_top = 617.0
-offset_right = 1192.0
-offset_bottom = 677.0
-text = "CONTINUAR"
+offset_left = 980.0
+offset_top = 580.0
+offset_right = 1330.0
+offset_bottom = 705.0
+scale = Vector2(0.7, 0.7)
+texture_normal = ExtResource("17_usoc3")
+texture_pressed = ExtResource("18_k6xlx")
+texture_hover = ExtResource("19_b3dyj")
+stretch_mode = 3
 
 [node name="OpcionesPanel" type="Panel" parent="."]
 visible = false
