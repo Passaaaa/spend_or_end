@@ -1,6 +1,37 @@
-[gd_scene load_steps=2 format=3 uid="uid://dae2rl4asaybh"]
+[gd_scene load_steps=14 format=3 uid="uid://dae2rl4asaybh"]
 
 [ext_resource type="Script" path="res://03_scripts/03_UI/DeathScreen.gd" id="1_a6acy"]
+[ext_resource type="Texture2D" uid="uid://bwlfmelsvo7ci" path="res://01_assets/01_sprites/03_UI/DeadScreen/Fuego01.png" id="2_0ox23"]
+[ext_resource type="Texture2D" uid="uid://rw1a2peygxf2" path="res://01_assets/01_sprites/03_UI/DeadScreen/Fuego02.png" id="3_eq06e"]
+[ext_resource type="Texture2D" uid="uid://du77w5yjedqiq" path="res://01_assets/01_sprites/03_UI/DeadScreen/Fuego03.png" id="4_pp1dd"]
+[ext_resource type="Texture2D" uid="uid://tsk5fqf72f3i" path="res://01_assets/01_sprites/03_UI/DeadScreen/Fuego04.png" id="5_rx2y2"]
+[ext_resource type="Texture2D" uid="uid://dnch0srt7m3vm" path="res://01_assets/01_sprites/03_UI/DeadScreen/Muerte.png" id="6_eowk5"]
+[ext_resource type="Texture2D" uid="uid://btvrixt43y2gn" path="res://01_assets/01_sprites/03_UI/Buttons/Reiniciar.png" id="7_sf5p3"]
+[ext_resource type="Texture2D" uid="uid://da3iswawbthw3" path="res://01_assets/01_sprites/03_UI/Buttons/ReiniciarPressed.png" id="8_6kyt7"]
+[ext_resource type="Texture2D" uid="uid://cb3yacvecux1x" path="res://01_assets/01_sprites/03_UI/Buttons/ReiniciarHovered.png" id="9_qencn"]
+[ext_resource type="Texture2D" uid="uid://cg27ikts5oepd" path="res://01_assets/01_sprites/03_UI/Buttons/Salir.png" id="10_5oj2s"]
+[ext_resource type="Texture2D" uid="uid://2idbhj6a5pyt" path="res://01_assets/01_sprites/03_UI/Buttons/SalirPressed.png" id="11_vc0og"]
+[ext_resource type="Texture2D" uid="uid://bfc75xiugt4sl" path="res://01_assets/01_sprites/03_UI/Buttons/SalirHovered.png" id="12_5siw7"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8whf8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_0ox23")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_eq06e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_pp1dd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_rx2y2")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="DeathScreen" type="CanvasLayer"]
 script = ExtResource("1_a6acy")
@@ -11,32 +42,60 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.396078, 0.396078, 0.396078, 1)
+color = Color(0.0901961, 0.0901961, 0.0901961, 1)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(640, 360)
+scale = Vector2(0.666667, 0.666667)
+sprite_frames = SubResource("SpriteFrames_8whf8")
+autoplay = "default"
+frame = 1
+frame_progress = 0.898642
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 1280.0
+offset_bottom = 720.0
+texture = ExtResource("6_eowk5")
+expand_mode = 1
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
-anchors_preset = 13
-anchor_left = 0.5
-anchor_right = 0.5
+clip_contents = true
+layout_direction = 3
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -220.0
-offset_right = 280.0
+offset_top = -244.0
 grow_horizontal = 2
-grow_vertical = 2
+grow_vertical = 0
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.0
 alignment = 1
 
-[node name="Label_muerto" type="Label" parent="VBoxContainer"]
-layout_mode = 2
-text = "HAS MUERTO"
-horizontal_alignment = 1
-vertical_alignment = 1
+[node name="Button_reiniciar" type="TextureButton" parent="."]
+offset_left = 945.0
+offset_top = 600.0
+offset_right = 1275.0
+offset_bottom = 715.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.0
+toggle_mode = true
+texture_normal = ExtResource("7_sf5p3")
+texture_pressed = ExtResource("8_6kyt7")
+texture_hover = ExtResource("9_qencn")
+stretch_mode = 3
 
-[node name="Button_reiniciar" type="Button" parent="VBoxContainer"]
-layout_mode = 2
-text = "REINICIAR"
+[node name="Button_salir" type="TextureButton" parent="."]
+offset_left = 5.0
+offset_top = 595.0
+offset_right = 355.0
+offset_bottom = 720.0
+toggle_mode = true
+texture_normal = ExtResource("10_5oj2s")
+texture_pressed = ExtResource("11_vc0og")
+texture_hover = ExtResource("12_5siw7")
+stretch_mode = 3
 
-[node name="Button_salir" type="Button" parent="VBoxContainer"]
-layout_mode = 2
-text = "SALIR"
-
-[connection signal="pressed" from="VBoxContainer/Button_reiniciar" to="." method="_on_button_reiniciar_pressed"]
-[connection signal="pressed" from="VBoxContainer/Button_salir" to="." method="_on_button_salir_pressed"]
+[connection signal="pressed" from="Button_reiniciar" to="." method="_on_button_reiniciar_pressed"]
+[connection signal="pressed" from="Button_salir" to="." method="_on_button_salir_pressed"]

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bab6wjngx1l7p"
-path="res://.godot/imported/EmpezarPressed.png-0ec3e2534892236bffa445563ffc96ea.ctex"
+uid="uid://cb3yacvecux1x"
+path="res://.godot/imported/ReiniciarHovered.png-c5c7fa66d6c50269731e6b84c7341221.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://01_assets/01_sprites/03_UI/EmpezarPressed.png"
-dest_files=["res://.godot/imported/EmpezarPressed.png-0ec3e2534892236bffa445563ffc96ea.ctex"]
+source_file="res://01_assets/01_sprites/03_UI/Buttons/ReiniciarHovered.png"
+dest_files=["res://.godot/imported/ReiniciarHovered.png-c5c7fa66d6c50269731e6b84c7341221.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cthej8geo7ylh"
-path="res://.godot/imported/Empezar.png-78b9f8f229e4992c098a013061839d60.ctex"
+uid="uid://tsk5fqf72f3i"
+path="res://.godot/imported/Fuego04.png-ff3db16700aead00b5c03a9d4fafe086.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://01_assets/01_sprites/03_UI/Empezar.png"
-dest_files=["res://.godot/imported/Empezar.png-78b9f8f229e4992c098a013061839d60.ctex"]
+source_file="res://01_assets/01_sprites/03_UI/DeadScreen/Fuego04.png"
+dest_files=["res://.godot/imported/Fuego04.png-ff3db16700aead00b5c03a9d4fafe086.ctex"]
 
 [params]
 

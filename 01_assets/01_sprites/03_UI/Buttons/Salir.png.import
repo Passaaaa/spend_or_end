@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d0uv7gvn3xp8a"
-path="res://.godot/imported/OpcionesHovered.png-1b5888240a307759841b64fd892e6fec.ctex"
+uid="uid://cg27ikts5oepd"
+path="res://.godot/imported/Salir.png-c11ca6d548612e504c2fd8a920a612d8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://01_assets/01_sprites/03_UI/OpcionesHovered.png"
-dest_files=["res://.godot/imported/OpcionesHovered.png-1b5888240a307759841b64fd892e6fec.ctex"]
+source_file="res://01_assets/01_sprites/03_UI/Buttons/Salir.png"
+dest_files=["res://.godot/imported/Salir.png-c11ca6d548612e504c2fd8a920a612d8.ctex"]
 
 [params]
 

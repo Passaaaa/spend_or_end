@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://7b1yds1iyf6v"
-path="res://.godot/imported/ContinuarHovered.png-52218f119e448c07fa614c066b99c3b3.ctex"
+uid="uid://cthej8geo7ylh"
+path="res://.godot/imported/Empezar.png-81dad0caa62cdb6dd45e2eb4005b6a3b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://01_assets/01_sprites/03_UI/ContinuarHovered.png"
-dest_files=["res://.godot/imported/ContinuarHovered.png-52218f119e448c07fa614c066b99c3b3.ctex"]
+source_file="res://01_assets/01_sprites/03_UI/Buttons/Empezar.png"
+dest_files=["res://.godot/imported/Empezar.png-81dad0caa62cdb6dd45e2eb4005b6a3b.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://2idbhj6a5pyt"
-path="res://.godot/imported/SalirPressed.png-fdebd89e18a3b45571e7a1392725bbce.ctex"
+uid="uid://btvrixt43y2gn"
+path="res://.godot/imported/Reiniciar.png-c412960c02ca216a6806e531cc3f2156.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://01_assets/01_sprites/03_UI/SalirPressed.png"
-dest_files=["res://.godot/imported/SalirPressed.png-fdebd89e18a3b45571e7a1392725bbce.ctex"]
+source_file="res://01_assets/01_sprites/03_UI/Buttons/Reiniciar.png"
+dest_files=["res://.godot/imported/Reiniciar.png-c412960c02ca216a6806e531cc3f2156.ctex"]
 
 [params]
 

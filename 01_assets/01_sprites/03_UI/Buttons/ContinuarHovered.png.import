@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://3k7id4mstwxq"
-path="res://.godot/imported/OpcionesPressed.png-0510b87efd08f49ee782918feaac358d.ctex"
+uid="uid://7b1yds1iyf6v"
+path="res://.godot/imported/ContinuarHovered.png-d3372bf2f6c4a0c842adcd0132652518.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://01_assets/01_sprites/03_UI/OpcionesPressed.png"
-dest_files=["res://.godot/imported/OpcionesPressed.png-0510b87efd08f49ee782918feaac358d.ctex"]
+source_file="res://01_assets/01_sprites/03_UI/Buttons/ContinuarHovered.png"
+dest_files=["res://.godot/imported/ContinuarHovered.png-d3372bf2f6c4a0c842adcd0132652518.ctex"]
 
 [params]
 

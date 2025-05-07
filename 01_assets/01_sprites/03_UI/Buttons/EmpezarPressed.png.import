@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bvejhrmmeopk"
-path="res://.godot/imported/ContinuarPressed.png-9b12170221f4b64ff73e4b025b77426b.ctex"
+uid="uid://bab6wjngx1l7p"
+path="res://.godot/imported/EmpezarPressed.png-384737d362ac34e410e49843784c5a64.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://01_assets/01_sprites/03_UI/ContinuarPressed.png"
-dest_files=["res://.godot/imported/ContinuarPressed.png-9b12170221f4b64ff73e4b025b77426b.ctex"]
+source_file="res://01_assets/01_sprites/03_UI/Buttons/EmpezarPressed.png"
+dest_files=["res://.godot/imported/EmpezarPressed.png-384737d362ac34e410e49843784c5a64.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://8x0rjv0kt4vx"
-path="res://.godot/imported/Continuar.png-23d6e8f4d5568b1b6b6d35d2b8967b21.ctex"
+uid="uid://bfc75xiugt4sl"
+path="res://.godot/imported/SalirHovered.png-28d491203f4d30ff2b50f6f1b7ef3cec.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://01_assets/01_sprites/03_UI/Continuar.png"
-dest_files=["res://.godot/imported/Continuar.png-23d6e8f4d5568b1b6b6d35d2b8967b21.ctex"]
+source_file="res://01_assets/01_sprites/03_UI/Buttons/SalirHovered.png"
+dest_files=["res://.godot/imported/SalirHovered.png-28d491203f4d30ff2b50f6f1b7ef3cec.ctex"]
 
 [params]
 

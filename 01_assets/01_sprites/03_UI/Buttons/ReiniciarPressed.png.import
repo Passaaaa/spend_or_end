@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b7oyq1qj1oyj3"
-path="res://.godot/imported/Empezar Hovered.png-652a8409ec4e8155099a9310df68f67f.ctex"
+uid="uid://da3iswawbthw3"
+path="res://.godot/imported/ReiniciarPressed.png-b39f3067a2f09e58e48a2a38c4f8654b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://01_assets/01_sprites/03_UI/Empezar Hovered.png"
-dest_files=["res://.godot/imported/Empezar Hovered.png-652a8409ec4e8155099a9310df68f67f.ctex"]
+source_file="res://01_assets/01_sprites/03_UI/Buttons/ReiniciarPressed.png"
+dest_files=["res://.godot/imported/ReiniciarPressed.png-b39f3067a2f09e58e48a2a38c4f8654b.ctex"]
 
 [params]
 
