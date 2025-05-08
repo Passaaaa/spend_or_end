@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://cfcmhdj054sqe"]
+[gd_scene load_steps=22 format=3 uid="uid://cfcmhdj054sqe"]
 
 [ext_resource type="Script" path="res://03_scripts/03_UI/MainMenu.gd" id="1_77v5r"]
 [ext_resource type="Texture2D" uid="uid://d227a8uaur7pc" path="res://01_assets/01_sprites/03_UI/Background.png" id="2_qgjhp"]
@@ -37,11 +37,12 @@ animations = [{
 "speed": 3.0
 }]
 
+[sub_resource type="CanvasTexture" id="CanvasTexture_73agi"]
+
 [node name="MainMenu" type="CanvasLayer"]
 script = ExtResource("1_77v5r")
 
 [node name="Background" type="TextureRect" parent="."]
-visible = false
 offset_right = 1280.0
 offset_bottom = 720.0
 texture = ExtResource("2_qgjhp")
@@ -99,6 +100,7 @@ texture_hover = ExtResource("12_beful")
 stretch_mode = 3
 
 [node name="TutorialPanel" type="Panel" parent="."]
+visible = false
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -132,6 +134,34 @@ texture_normal = ExtResource("17_usoc3")
 texture_pressed = ExtResource("18_k6xlx")
 texture_hover = ExtResource("19_b3dyj")
 stretch_mode = 3
+
+[node name="IntroPanel" type="Panel" parent="."]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Button_tutorial" type="TextureButton" parent="IntroPanel"]
+layout_mode = 0
+offset_left = 980.0
+offset_top = 580.0
+offset_right = 1330.0
+offset_bottom = 705.0
+scale = Vector2(0.7, 0.7)
+texture_normal = ExtResource("17_usoc3")
+texture_pressed = ExtResource("18_k6xlx")
+texture_hover = ExtResource("19_b3dyj")
+stretch_mode = 3
+
+[node name="TextureRect" type="TextureRect" parent="IntroPanel"]
+layout_mode = 0
+offset_left = 228.0
+offset_top = 140.0
+offset_right = 1041.0
+offset_bottom = 558.0
+texture = SubResource("CanvasTexture_73agi")
 
 [node name="OpcionesPanel" type="Panel" parent="."]
 visible = false
@@ -183,4 +213,5 @@ text = "VOLVER"
 [connection signal="pressed" from="Background/VBoxContainer/Button_opciones" to="." method="_on_button_opciones_pressed"]
 [connection signal="pressed" from="Background/VBoxContainer/Button_salir" to="." method="_on_button_salir_pressed"]
 [connection signal="pressed" from="TutorialPanel/Button_empezarLvl" to="." method="_on_button_empezar_lvl_pressed"]
+[connection signal="pressed" from="IntroPanel/Button_tutorial" to="." method="_on_button_tutorial_pressed"]
 [connection signal="pressed" from="OpcionesPanel/Button_volver" to="." method="_on_button_volver_pressed"]

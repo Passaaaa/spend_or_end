@@ -5,6 +5,7 @@ extends CanvasLayer
 @onready var opciones_panel = $OpcionesPanel
 @onready var music_slider = $OpcionesPanel/MusicSlider
 @onready var sfx_slider = $OpcionesPanel/SfxSlider
+@onready var intro_panel = $IntroPanel
 
 func _ready():
 	Background.visible = true
@@ -12,7 +13,7 @@ func _ready():
 	opciones_panel.visible = false
 	
 func _on_button_empezar_pressed():
-	tutorial_panel.visible = true
+	intro_panel.visible = true
 	Background.visible = false
 
 func _on_button_opciones_pressed():
@@ -44,3 +45,7 @@ func linear_to_db(value: float) -> float:
 	if value <= 0.0:
 		return -80.0
 	return 20.0 * (log(value) / log(10))
+
+func _on_button_tutorial_pressed():
+	tutorial_panel.visible = true
+	intro_panel.visible = false

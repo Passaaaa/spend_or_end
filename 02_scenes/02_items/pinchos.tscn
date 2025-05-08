@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://d3xlshy53rjlm"]
 
 [ext_resource type="Script" path="res://03_scripts/02_levels/02_obstacles/pinchos.gd" id="1_yxufo"]
-[ext_resource type="Texture2D" uid="uid://be7hga5khyj8s" path="res://01_assets/01_sprites/02_environments/Spikes.png" id="2_43aes"]
+[ext_resource type="Texture2D" uid="uid://csofouuxbr6wt" path="res://01_assets/01_sprites/02_environments/cono.png" id="2_vgkre"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_1ll21"]
 a = Vector2(16, -66)
@@ -11,8 +11,9 @@ b = Vector2(-4, 11)
 script = ExtResource("1_yxufo")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.1, 0.1)
-texture = ExtResource("2_43aes")
+position = Vector2(1, 5)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("2_vgkre")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-17, 32)
