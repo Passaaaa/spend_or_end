@@ -28,7 +28,7 @@ func _physics_process(delta: float) -> void:
 			velocity.y = jump_force
 			is_jumping = true
 
-	# Salto más corto si sueltas rápido
+	# Salto más corto si se suelta rápido
 	if is_jumping and Input.is_action_just_released("ui_accept") and velocity.y < 0:
 		velocity.y *= jump_release_factor
 		is_jumping = false
@@ -38,13 +38,12 @@ func _physics_process(delta: float) -> void:
 		
 	if position.y > 1000:
 		die()
-		
-	# Detectar colisión lateral
-	move_and_slide()
+
+	move_and_slide()  # Godot 4: no se pasa velocity ni dirección
 
 	for i in get_slide_collision_count():
 		var collision = get_slide_collision(i)
-		if collision.get_normal().x < -0.9:  # Chocando de frente (de izquierda a derecha)
+		if collision.get_normal().x < -0.9:
 			velocity.x = rebound_force
 			is_rebounding = true
 			rebound_timer = rebound_time
