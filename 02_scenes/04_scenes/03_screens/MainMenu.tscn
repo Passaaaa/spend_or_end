@@ -1,21 +1,18 @@
-[gd_scene load_steps=22 format=3 uid="uid://cfcmhdj054sqe"]
+[gd_scene load_steps=19 format=3 uid="uid://cfcmhdj054sqe"]
 
 [ext_resource type="Script" path="res://03_scripts/03_UI/MainMenu.gd" id="1_77v5r"]
 [ext_resource type="Texture2D" uid="uid://d227a8uaur7pc" path="res://01_assets/01_sprites/03_UI/Background.png" id="2_qgjhp"]
 [ext_resource type="Texture2D" uid="uid://cspnj51jwyur3" path="res://01_assets/01_sprites/03_UI/Title.png" id="3_gn24h"]
 [ext_resource type="Texture2D" uid="uid://cs5lkr2wk0jtv" path="res://01_assets/01_sprites/03_UI/BackGif01.png" id="3_nequp"]
-[ext_resource type="Texture2D" uid="uid://cthej8geo7ylh" path="res://01_assets/01_sprites/03_UI/Buttons/Empezar.png" id="4_regyy"]
 [ext_resource type="Texture2D" uid="uid://cf5jrht86htey" path="res://01_assets/01_sprites/03_UI/BackGif02.png" id="4_yx8lb"]
-[ext_resource type="Texture2D" uid="uid://cuorpnvflri2b" path="res://01_assets/01_sprites/03_UI/Buttons/Opciones.png" id="5_1t867"]
-[ext_resource type="Texture2D" uid="uid://bab6wjngx1l7p" path="res://01_assets/01_sprites/03_UI/Buttons/EmpezarPressed.png" id="5_lpky5"]
-[ext_resource type="Texture2D" uid="uid://b7oyq1qj1oyj3" path="res://01_assets/01_sprites/03_UI/Buttons/Empezar Hovered.png" id="5_vs0m2"]
 [ext_resource type="Texture2D" uid="uid://08e0uhrwx56q" path="res://01_assets/01_sprites/03_UI/BackGif03.png" id="5_wbweq"]
-[ext_resource type="Texture2D" uid="uid://cg27ikts5oepd" path="res://01_assets/01_sprites/03_UI/Buttons/Salir.png" id="6_fomvh"]
 [ext_resource type="Texture2D" uid="uid://cdt76t6c30uqf" path="res://01_assets/01_sprites/03_UI/Background02.png" id="6_r320i"]
-[ext_resource type="Texture2D" uid="uid://3k7id4mstwxq" path="res://01_assets/01_sprites/03_UI/Buttons/OpcionesPressed.png" id="8_uk86y"]
-[ext_resource type="Texture2D" uid="uid://d0uv7gvn3xp8a" path="res://01_assets/01_sprites/03_UI/Buttons/OpcionesHovered.png" id="9_n4jg1"]
-[ext_resource type="Texture2D" uid="uid://2idbhj6a5pyt" path="res://01_assets/01_sprites/03_UI/Buttons/SalirPressed.png" id="11_s01ie"]
-[ext_resource type="Texture2D" uid="uid://bfc75xiugt4sl" path="res://01_assets/01_sprites/03_UI/Buttons/SalirHovered.png" id="12_beful"]
+[ext_resource type="Texture2D" uid="uid://dlwip8214ukye" path="res://01_assets/01_sprites/03_UI/Buttons/Normal.png" id="8_rsdn2"]
+[ext_resource type="Texture2D" uid="uid://b0fdp0dlgajaa" path="res://01_assets/01_sprites/03_UI/Buttons/Pressed.png" id="9_8y1c4"]
+[ext_resource type="Texture2D" uid="uid://b7gcup3qgw0ti" path="res://01_assets/01_sprites/03_UI/Buttons/Hovered.png" id="10_oru7d"]
+[ext_resource type="LabelSettings" uid="uid://bhjg7yugc5g58" path="res://03_scripts/03_UI/ButtonLabelSettings.tres" id="11_njyvy"]
+[ext_resource type="VideoStream" path="res://01_assets/01_sprites/03_UI/Tuto/Salto.ogv" id="12_scw4j"]
+[ext_resource type="VideoStream" path="res://01_assets/01_sprites/03_UI/Tuto/Doblesalto.ogv" id="13_upulp"]
 [ext_resource type="Texture2D" uid="uid://8x0rjv0kt4vx" path="res://01_assets/01_sprites/03_UI/Buttons/Continuar.png" id="17_usoc3"]
 [ext_resource type="Texture2D" uid="uid://bvejhrmmeopk" path="res://01_assets/01_sprites/03_UI/Buttons/ContinuarPressed.png" id="18_k6xlx"]
 [ext_resource type="Texture2D" uid="uid://7b1yds1iyf6v" path="res://01_assets/01_sprites/03_UI/Buttons/ContinuarHovered.png" id="19_b3dyj"]
@@ -43,6 +40,7 @@ animations = [{
 script = ExtResource("1_77v5r")
 
 [node name="Background" type="TextureRect" parent="."]
+visible = false
 offset_right = 1280.0
 offset_bottom = 720.0
 texture = ExtResource("2_qgjhp")
@@ -78,29 +76,76 @@ texture = ExtResource("3_gn24h")
 stretch_mode = 5
 
 [node name="Button_empezar" type="TextureButton" parent="Background/VBoxContainer"]
+clip_children = 2
 layout_mode = 2
-texture_normal = ExtResource("4_regyy")
-texture_pressed = ExtResource("5_lpky5")
-texture_hover = ExtResource("5_vs0m2")
+texture_normal = ExtResource("8_rsdn2")
+texture_pressed = ExtResource("9_8y1c4")
+texture_hover = ExtResource("10_oru7d")
 stretch_mode = 3
+
+[node name="Label" type="Label" parent="Background/VBoxContainer/Button_empezar"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.251
+anchor_top = 0.168
+anchor_right = 0.749
+anchor_bottom = 0.832
+offset_left = -0.110016
+offset_right = 0.109985
+grow_horizontal = 2
+grow_vertical = 2
+text = "START"
+label_settings = ExtResource("11_njyvy")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+clip_text = true
+text_direction = 1
 
 [node name="Button_opciones" type="TextureButton" parent="Background/VBoxContainer"]
 layout_mode = 2
-texture_normal = ExtResource("5_1t867")
-texture_pressed = ExtResource("8_uk86y")
-texture_hover = ExtResource("9_n4jg1")
+texture_normal = ExtResource("8_rsdn2")
+texture_pressed = ExtResource("9_8y1c4")
+texture_hover = ExtResource("10_oru7d")
 stretch_mode = 3
+
+[node name="Label" type="Label" parent="Background/VBoxContainer/Button_opciones"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.249
+anchor_top = 0.168
+anchor_right = 0.741
+anchor_bottom = 0.832
+offset_left = 0.109985
+offset_right = 5.98996
+text = "OPTIONS"
+label_settings = ExtResource("11_njyvy")
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Button_salir" type="TextureButton" parent="Background/VBoxContainer"]
 layout_mode = 2
 toggle_mode = true
-texture_normal = ExtResource("6_fomvh")
-texture_pressed = ExtResource("11_s01ie")
-texture_hover = ExtResource("12_beful")
+texture_normal = ExtResource("8_rsdn2")
+texture_pressed = ExtResource("9_8y1c4")
+texture_hover = ExtResource("10_oru7d")
 stretch_mode = 3
 
+[node name="Label" type="Label" parent="Background/VBoxContainer/Button_salir"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.249
+anchor_top = 0.168
+anchor_right = 0.741
+anchor_bottom = 0.832
+offset_left = 0.109985
+offset_right = 5.98996
+text = "EXIT"
+label_settings = ExtResource("11_njyvy")
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="TutorialPanel" type="Panel" parent="."]
-visible = false
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -130,10 +175,54 @@ offset_top = 580.0
 offset_right = 1330.0
 offset_bottom = 705.0
 scale = Vector2(0.7, 0.7)
-texture_normal = ExtResource("17_usoc3")
-texture_pressed = ExtResource("18_k6xlx")
-texture_hover = ExtResource("19_b3dyj")
+texture_normal = ExtResource("8_rsdn2")
+texture_pressed = ExtResource("9_8y1c4")
+texture_hover = ExtResource("10_oru7d")
 stretch_mode = 3
+
+[node name="Label" type="Label" parent="TutorialPanel/Button_empezarLvl"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.098
+anchor_top = 0.168
+anchor_right = 0.898
+anchor_bottom = 0.824
+offset_left = -0.0143433
+offset_top = -1.00002
+offset_right = -0.0143738
+offset_bottom = -2.28882e-05
+text = "NEXT"
+label_settings = ExtResource("11_njyvy")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Salto" type="VideoStreamPlayer" parent="TutorialPanel"]
+clip_contents = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.073
+anchor_top = 0.087
+anchor_right = 0.573
+anchor_bottom = 0.642
+offset_left = -0.44001
+offset_top = 39.36
+offset_right = 639.56
+offset_bottom = 359.76
+scale = Vector2(0.5, 0.5)
+stream = ExtResource("12_scw4j")
+autoplay = true
+loop = true
+
+[node name="DobleSalto" type="VideoStreamPlayer" parent="TutorialPanel"]
+layout_mode = 0
+offset_left = 686.0
+offset_top = 102.0
+offset_right = 1966.0
+offset_bottom = 822.0
+scale = Vector2(0.5, 0.5)
+stream = ExtResource("13_upulp")
+autoplay = true
+loop = true
 
 [node name="IntroPanel" type="Panel" parent="."]
 visible = false
