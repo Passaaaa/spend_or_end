@@ -194,6 +194,8 @@ expand_mode = 1
 [node name="DeathScreen" parent="." instance=ExtResource("3_36655")]
 visible = false
 
+[node name="TileMap" parent="." instance=ExtResource("10_caunr")]
+
 [node name="Pinchos" parent="." instance=ExtResource("6_il0t8")]
 position = Vector2(3223, 538)
 
@@ -726,7 +728,5 @@ speed = 200.0
 [node name="Goomba14" parent="." instance=ExtResource("8_ukn13")]
 position = Vector2(22106, 561)
 speed = 300.0
-
-[node name="TileMap" parent="." instance=ExtResource("10_caunr")]
 
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
