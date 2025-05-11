@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 @export var speed: float = 50.0
 @export var gravity: float = 1000.0
-@export var bounce_force: float = -500.0
+@export var bounce_force: float = -1250.0
 
 var active = false
 var direction = -1  # siempre hacia la izquierda

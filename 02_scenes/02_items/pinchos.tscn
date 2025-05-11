@@ -4,8 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://csofouuxbr6wt" path="res://01_assets/01_sprites/02_environments/cono.png" id="2_vgkre"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_1ll21"]
-a = Vector2(16, -66)
-b = Vector2(-4, 11)
+a = Vector2(19, -51)
+b = Vector2(10, 8)
 
 [node name="Pinchos" type="Area2D"]
 script = ExtResource("1_yxufo")

@@ -255,17 +255,14 @@ position = Vector2(6825, 297)
 [node name="Goomba" parent="." instance=ExtResource("10_cs0xv")]
 position = Vector2(4684, 660)
 speed = 75.0
-bounce_force = -1250.0
 
 [node name="Goomba2" parent="." instance=ExtResource("10_cs0xv")]
 position = Vector2(15197, 404)
 speed = 0.0
-bounce_force = -1250.0
 
 [node name="Goomba3" parent="." instance=ExtResource("10_cs0xv")]
 position = Vector2(14119, 596)
 speed = 0.0
-bounce_force = -1250.0
 
 [node name="Pinchos2" parent="." instance=ExtResource("5_virjb")]
 position = Vector2(13325, 661)

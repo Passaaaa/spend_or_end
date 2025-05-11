@@ -228,7 +228,7 @@ visible = false
 position = Vector2(1468, 627)
 
 [node name="Player" parent="." instance=ExtResource("7_khgka")]
-position = Vector2(-222, 560)
+position = Vector2(-225, 592)
 speed = 400.0
 jump_force = -1000.0
 gravity = 2250.0
@@ -256,17 +256,14 @@ position = Vector2(6825, 297)
 [node name="Goomba" parent="." instance=ExtResource("11_l3lv7")]
 position = Vector2(4684, 660)
 speed = 75.0
-bounce_force = -1250.0
 
 [node name="Goomba2" parent="." instance=ExtResource("11_l3lv7")]
 position = Vector2(15197, 404)
 speed = 0.0
-bounce_force = -1250.0
 
 [node name="Goomba3" parent="." instance=ExtResource("11_l3lv7")]
 position = Vector2(14119, 596)
 speed = 0.0
-bounce_force = -1250.0
 
 [node name="Pinchos2" parent="." instance=ExtResource("6_v0k0k")]
 position = Vector2(13325, 661)
