@@ -1,0 +1,47 @@
+[gd_scene load_steps=6 format=3 uid="uid://x28uvyfxsc43"]
+
+[ext_resource type="Script" path="res://03_scripts/02_levels/01_enemies/Goomba.gd" id="1_5rss3"]
+[ext_resource type="Texture2D" uid="uid://sl44ptx7hqva" path="res://01_assets/01_sprites/01_characters/gommba.png" id="2_rxvau"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_c0pr0"]
+radius = 18.7391
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dk2i0"]
+size = Vector2(101.693, 9.96857)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_upjrk"]
+radius = 10.0358
+height = 32.2744
+
+[node name="Goomba" type="CharacterBody2D"]
+script = ExtResource("1_5rss3")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("2_rxvau")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 20.6362)
+shape = SubResource("CircleShape2D_c0pr0")
+
+[node name="TopDetector" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TopDetector"]
+position = Vector2(3.46102, -18.0629)
+scale = Vector2(0.559999, 3)
+shape = SubResource("RectangleShape2D_dk2i0")
+
+[node name="ScreenNotifier" type="VisibleOnScreenNotifier2D" parent="."]
+position = Vector2(0, -3.8147e-06)
+scale = Vector2(2.6, 2.6125)
+
+[node name="Hitbox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+position = Vector2(-15.626, 15.6756)
+scale = Vector2(1.2, 1)
+shape = SubResource("CapsuleShape2D_upjrk")
+
+[connection signal="body_entered" from="TopDetector" to="." method="_on_top_detector_body_entered"]
+[connection signal="screen_entered" from="ScreenNotifier" to="." method="_on_screen_notifier_screen_entered"]
+[connection signal="body_entered" from="Hitbox" to="." method="_on_hitbox_body_entered"]

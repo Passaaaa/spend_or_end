@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://rrjfuilrsj86" path="res://01_assets/01_sprites/02_environments/0_Template_Tileset.png" id="4_dt8yo"]
 [ext_resource type="Texture2D" uid="uid://b5reuuyn1l3tj" path="res://01_assets/01_sprites/02_environments/roadTile.png" id="5_345um"]
 [ext_resource type="PackedScene" uid="uid://d3xlshy53rjlm" path="res://02_scenes/02_items/pinchos.tscn" id="6_udshu"]
-[ext_resource type="PackedScene" uid="uid://c11a4hfi1ko2u" path="res://02_scenes/01_characters/player.tscn" id="7_dcq5s"]
+[ext_resource type="PackedScene" uid="uid://c11a4hfi1ko2u" path="res://02_scenes/01_characters/Player.tscn" id="7_dcq5s"]
 [ext_resource type="Script" path="res://02_scenes/04_scenes/03_screens/shopCollision.gd" id="8_plnpq"]
 [ext_resource type="PackedScene" uid="uid://ebn7oa0yrdg8" path="res://02_scenes/04_scenes/03_screens/Shop_lvl03.tscn" id="10_hj6nm"]
 
