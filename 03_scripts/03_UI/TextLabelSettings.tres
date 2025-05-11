@@ -7,4 +7,3 @@ font = ExtResource("1_uf2ge")
 font_size = 24
 font_color = Color(0, 0, 0, 1)
 shadow_color = Color(0.411765, 0.411765, 0.411765, 1)
-shadow_offset = Vector2(3, 1)

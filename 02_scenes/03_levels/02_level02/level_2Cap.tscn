@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://gvgki7lf0fr2" path="res://01_assets/01_sprites/02_environments/EducacionPrivada.png" id="2_ksx54"]
 [ext_resource type="PackedScene" uid="uid://dae2rl4asaybh" path="res://02_scenes/04_scenes/02_Death/DeathScreen.tscn" id="3_2rgef"]
 [ext_resource type="PackedScene" uid="uid://d3xlshy53rjlm" path="res://02_scenes/02_items/pinchos.tscn" id="6_v0k0k"]
-[ext_resource type="PackedScene" uid="uid://c11a4hfi1ko2u" path="res://02_scenes/01_characters/Player.tscn" id="7_khgka"]
+[ext_resource type="PackedScene" uid="uid://c11a4hfi1ko2u" path="res://02_scenes/01_characters/player.tscn" id="7_khgka"]
 [ext_resource type="Script" path="res://02_scenes/04_scenes/03_screens/shopCollision.gd" id="8_lg1yw"]
 [ext_resource type="PackedScene" uid="uid://dvr465htlmxh8" path="res://02_scenes/04_scenes/03_screens/Shop_lvl02.tscn" id="10_3of1r"]
 [ext_resource type="PackedScene" uid="uid://bmk7aqnd6a7v" path="res://02_scenes/02_items/jetpack.tscn" id="10_iinva"]
