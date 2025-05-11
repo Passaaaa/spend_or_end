@@ -11,7 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://by6msjni5g4iw" path="res://01_assets/01_sprites/01_characters/player_jetpack.png" id="9_6c216"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_y56pf"]
-size = Vector2(59, 73)
+size = Vector2(59, 74)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_xvev1"]
 animations = [{
@@ -46,7 +46,7 @@ animations = [{
 script = ExtResource("1_qhgud")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-0.5, 2.5)
+position = Vector2(-0.5, 3)
 shape = SubResource("RectangleShape2D_y56pf")
 
 [node name="PlayerSprite" type="AnimatedSprite2D" parent="."]

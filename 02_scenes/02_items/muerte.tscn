@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://cfau8t3wl2kki"]
+
+[ext_resource type="Script" path="res://03_scripts/04_utils/muerte.gd" id="1_kwn4g"]
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_la57b"]
+b = Vector2(0, 87)
+
+[node name="muerte" type="Area2D"]
+script = ExtResource("1_kwn4g")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("SegmentShape2D_la57b")
+debug_color = Color(0.996078, 0, 0.207843, 0.419608)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
