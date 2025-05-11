@@ -13,4 +13,5 @@ func _on_button_reiniciar_pressed():
 	get_tree().reload_current_scene()
 
 func _on_button_salir_pressed():
-	get_tree().quit()
+	get_tree().change_scene_to_file("res://02_scenes/04_scenes/03_screens/MainMenu.tscn")
+	#get_tree().quit()

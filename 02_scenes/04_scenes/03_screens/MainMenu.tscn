@@ -13,9 +13,9 @@
 [ext_resource type="LabelSettings" uid="uid://bhjg7yugc5g58" path="res://03_scripts/03_UI/ButtonLabelSettings.tres" id="11_njyvy"]
 [ext_resource type="VideoStream" path="res://01_assets/01_sprites/03_UI/Tuto/Salto.ogv" id="12_scw4j"]
 [ext_resource type="VideoStream" path="res://01_assets/01_sprites/03_UI/Tuto/Doblesalto.ogv" id="13_upulp"]
-[ext_resource type="Texture2D" uid="uid://8x0rjv0kt4vx" path="res://01_assets/01_sprites/03_UI/Buttons/Continuar.png" id="17_usoc3"]
-[ext_resource type="Texture2D" uid="uid://bvejhrmmeopk" path="res://01_assets/01_sprites/03_UI/Buttons/ContinuarPressed.png" id="18_k6xlx"]
-[ext_resource type="Texture2D" uid="uid://7b1yds1iyf6v" path="res://01_assets/01_sprites/03_UI/Buttons/ContinuarHovered.png" id="19_b3dyj"]
+[ext_resource type="Texture2D" uid="uid://bj5bolxdhrn6x" path="res://01_assets/01_sprites/03_UI/Tuto/MarcoTutorial.png" id="14_kp23d"]
+[ext_resource type="FontFile" uid="uid://0c8blrst4tvx" path="res://01_assets/02_fonts/typo_comica/Typo_Comica_demo.otf" id="15_wu85y"]
+[ext_resource type="LabelSettings" uid="uid://d31e2v2ph2qrc" path="res://03_scripts/03_UI/TextLabelSettings.tres" id="16_yromt"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_j4gqh"]
 animations = [{
@@ -40,7 +40,6 @@ animations = [{
 script = ExtResource("1_77v5r")
 
 [node name="Background" type="TextureRect" parent="."]
-visible = false
 offset_right = 1280.0
 offset_bottom = 720.0
 texture = ExtResource("2_qgjhp")
@@ -146,34 +145,54 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="TutorialPanel" type="Panel" parent="."]
+visible = false
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Label_saltoSimple" type="Label" parent="TutorialPanel"]
-layout_mode = 0
-offset_left = 100.0
-offset_top = 500.0
-offset_right = 421.0
-offset_bottom = 523.0
-text = "Presiona (spacebar) para realizar un salto"
+[node name="Salto" type="VideoStreamPlayer" parent="TutorialPanel"]
+clip_contents = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.117
+anchor_top = 0.087
+anchor_right = 0.617
+anchor_bottom = 0.642
+offset_left = 0.23999
+offset_top = 39.36
+offset_right = 640.24
+offset_bottom = 359.76
+scale = Vector2(0.5, 0.5)
+stream = ExtResource("12_scw4j")
+autoplay = true
+loop = true
 
-[node name="Label_saltoAlto" type="Label" parent="TutorialPanel"]
+[node name="DobleSalto" type="VideoStreamPlayer" parent="TutorialPanel"]
 layout_mode = 0
-offset_left = 700.0
-offset_top = 500.0
-offset_right = 1084.0
-offset_bottom = 523.0
-text = "Manten (spacebar) para relaizar un salto más alto"
+offset_left = 829.0
+offset_top = 102.0
+offset_right = 2109.0
+offset_bottom = 822.0
+scale = Vector2(0.5, 0.5)
+stream = ExtResource("13_upulp")
+autoplay = true
+loop = true
+
+[node name="Marco" type="TextureRect" parent="TutorialPanel"]
+modulate = Color(0, 1, 0.313726, 1)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("14_kp23d")
 
 [node name="Button_empezarLvl" type="TextureButton" parent="TutorialPanel"]
 layout_mode = 0
-offset_left = 980.0
-offset_top = 580.0
-offset_right = 1330.0
-offset_bottom = 705.0
+offset_left = 513.0
+offset_top = 610.0
+offset_right = 863.0
+offset_bottom = 735.0
 scale = Vector2(0.7, 0.7)
 texture_normal = ExtResource("8_rsdn2")
 texture_pressed = ExtResource("9_8y1c4")
@@ -187,42 +206,80 @@ anchor_left = 0.098
 anchor_top = 0.168
 anchor_right = 0.898
 anchor_bottom = 0.824
-offset_left = -0.0143433
+offset_left = -0.0143394
 offset_top = -1.00002
-offset_right = -0.0143738
-offset_bottom = -2.28882e-05
+offset_right = -0.0143433
+offset_bottom = -1.52588e-05
 text = "NEXT"
 label_settings = ExtResource("11_njyvy")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Salto" type="VideoStreamPlayer" parent="TutorialPanel"]
-clip_contents = true
+[node name="BackText01" type="TextureRect" parent="TutorialPanel"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.073
-anchor_top = 0.087
-anchor_right = 0.573
-anchor_bottom = 0.642
-offset_left = -0.44001
-offset_top = 39.36
-offset_right = 639.56
-offset_bottom = 359.76
-scale = Vector2(0.5, 0.5)
-stream = ExtResource("12_scw4j")
-autoplay = true
-loop = true
+anchor_right = 0.031
+anchor_bottom = 0.056
+offset_left = 117.0
+offset_top = 475.0
+offset_right = 427.32
+offset_bottom = 559.68
+texture = ExtResource("8_rsdn2")
 
-[node name="DobleSalto" type="VideoStreamPlayer" parent="TutorialPanel"]
+[node name="Label_saltoSimple" type="Label" parent="TutorialPanel/BackText01"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.086
+anchor_top = 0.16
+anchor_right = 0.92
+anchor_bottom = 0.824
+offset_left = -0.1
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0.411765, 0.411765, 0.411765, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 1
+theme_override_fonts/font = ExtResource("15_wu85y")
+theme_override_font_sizes/font_size = 24
+text = "Press (spacebar) to do a simple jump "
+label_settings = ExtResource("16_yromt")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="BackText02" type="TextureRect" parent="TutorialPanel"]
 layout_mode = 0
-offset_left = 686.0
-offset_top = 102.0
-offset_right = 1966.0
-offset_bottom = 822.0
-scale = Vector2(0.5, 0.5)
-stream = ExtResource("13_upulp")
-autoplay = true
-loop = true
+offset_left = 789.0
+offset_top = 475.0
+offset_right = 1162.0
+offset_bottom = 600.0
+texture = ExtResource("8_rsdn2")
+
+[node name="Label_saltoDoble" type="Label" parent="TutorialPanel/BackText02"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.086
+anchor_top = 0.16
+anchor_right = 0.92
+anchor_bottom = 0.824
+offset_left = -1.1
+offset_top = -21.0
+offset_right = -2.0
+offset_bottom = 22.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0.411765, 0.411765, 0.411765, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 1
+theme_override_fonts/font = ExtResource("15_wu85y")
+theme_override_font_sizes/font_size = 24
+text = "Press and keep (spacebar) to do a higher jump"
+label_settings = ExtResource("16_yromt")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
 
 [node name="IntroPanel" type="Panel" parent="."]
 visible = false
@@ -232,6 +289,20 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
+[node name="TextureRect2" type="TextureRect" parent="IntroPanel"]
+modulate = Color(0, 1, 0.313726, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 0.00012207
+offset_top = 6.10352e-05
+offset_right = 0.00012207
+offset_bottom = 6.10352e-05
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("CanvasTexture_73agi")
+
 [node name="Button_tutorial" type="TextureButton" parent="IntroPanel"]
 layout_mode = 0
 offset_left = 980.0
@@ -239,18 +310,46 @@ offset_top = 580.0
 offset_right = 1330.0
 offset_bottom = 705.0
 scale = Vector2(0.7, 0.7)
-texture_normal = ExtResource("17_usoc3")
-texture_pressed = ExtResource("18_k6xlx")
-texture_hover = ExtResource("19_b3dyj")
+texture_normal = ExtResource("8_rsdn2")
+texture_pressed = ExtResource("9_8y1c4")
+texture_hover = ExtResource("10_oru7d")
 stretch_mode = 3
+
+[node name="Label" type="Label" parent="IntroPanel/Button_tutorial"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.098
+anchor_top = 0.168
+anchor_right = 0.898
+anchor_bottom = 0.824
+offset_left = -0.0143394
+offset_top = -1.00002
+offset_right = -0.0143433
+offset_bottom = -1.52588e-05
+text = "NEXT"
+label_settings = ExtResource("11_njyvy")
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="TextureRect" type="TextureRect" parent="IntroPanel"]
 layout_mode = 0
 offset_left = 228.0
-offset_top = 140.0
+offset_top = 164.0
 offset_right = 1041.0
-offset_bottom = 558.0
+offset_bottom = 534.0
 texture = SubResource("CanvasTexture_73agi")
+
+[node name="Label" type="Label" parent="IntroPanel/TextureRect"]
+layout_mode = 0
+offset_left = 41.0
+offset_top = -36.0
+offset_right = 772.0
+offset_bottom = 403.0
+text = "You've been elected as the new President, congrats... I guess? So, now you're the one in charge of this whole shebang. You'll be calling the shots on our future, so, you know, try not to mess it up too badly. Your decisions? Yeah, they'll have consequences for us (potentially really, really bad ones...). Anyway, time to kick off your presidential adventure! Head on over to the Oval Office and start making those super important, life-altering decisions. ALL IS UP TO YOU. No pressure though! Good luck with that!"
+label_settings = ExtResource("16_yromt")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
 
 [node name="OpcionesPanel" type="Panel" parent="."]
 visible = false

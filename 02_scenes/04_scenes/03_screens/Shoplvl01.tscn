@@ -1,0 +1,101 @@
+[gd_scene load_steps=14 format=3 uid="uid://drnnvxc3vs00j"]
+
+[ext_resource type="Script" path="res://02_scenes/04_scenes/03_screens/Shop.gd" id="1_8acl1"]
+[ext_resource type="Texture2D" uid="uid://tfmio1tywvt6" path="res://01_assets/01_sprites/03_UI/Shop/ShopBackground.png" id="2_0urwk"]
+[ext_resource type="PackedScene" uid="uid://cpey2xrr02uu3" path="res://02_scenes/03_levels/02_level02/level_2NoCap.tscn" id="2_uj4bh"]
+[ext_resource type="PackedScene" uid="uid://c2bkaxwa6e2x4" path="res://02_scenes/03_levels/02_level02/level_2Cap.tscn" id="3_3ofjf"]
+[ext_resource type="FontFile" uid="uid://0c8blrst4tvx" path="res://01_assets/02_fonts/typo_comica/Typo_Comica_demo.otf" id="3_4eo16"]
+
+[sub_resource type="Theme" id="Theme_6o8l8"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7gulw"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ktcyp"]
+bg_color = Color(0.196078, 0.345098, 0.541176, 0.372549)
+border_color = Color(0.8, 0.8, 0.8, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4hnkl"]
+bg_color = Color(0.768627, 0.870588, 1, 0.682353)
+border_color = Color(0.8, 0.8, 0.8, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ymvhr"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_color = Color(0.8, 0.8, 0.8, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bmn03"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_77m1o"]
+bg_color = Color(1, 0.36, 0.36, 0.372549)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jg38s"]
+bg_color = Color(1, 0.77, 0.77, 0.682353)
+
+[node name="Shop" type="Node2D"]
+script = ExtResource("1_8acl1")
+lvlNoCap = ExtResource("2_uj4bh")
+lvlCap = ExtResource("3_3ofjf")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+modulate = Color(0.788235, 0.788235, 0.788235, 1)
+offset_right = 1280.0
+offset_bottom = 720.0
+texture = ExtResource("2_0urwk")
+expand_mode = 1
+
+[node name="Boton_capitalista" type="Button" parent="."]
+offset_left = 42.0
+offset_top = 446.0
+offset_right = 598.0
+offset_bottom = 691.0
+theme = SubResource("Theme_6o8l8")
+theme_override_fonts/font = ExtResource("3_4eo16")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_7gulw")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ktcyp")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_4hnkl")
+theme_override_styles/focus = SubResource("StyleBoxFlat_ymvhr")
+alignment = 0
+clip_text = true
+text_direction = 1
+
+[node name="Label" type="Label" parent="Boton_capitalista"]
+layout_mode = 0
+offset_right = 553.0
+offset_bottom = 240.0
+theme_override_fonts/font = ExtResource("3_4eo16")
+theme_override_font_sizes/font_size = 24
+text = "Viva el dinero que os jodan a todos putos rojos pobres MUAJAJAJAJAJJAJAJAAJJA"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+clip_text = true
+
+[node name="Boton_noCapitalista" type="Button" parent="."]
+offset_left = 680.0
+offset_top = 446.0
+offset_right = 1236.0
+offset_bottom = 691.0
+theme = SubResource("Theme_6o8l8")
+theme_override_styles/normal = SubResource("StyleBoxFlat_bmn03")
+theme_override_styles/hover = SubResource("StyleBoxFlat_77m1o")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_jg38s")
+theme_override_styles/focus = SubResource("StyleBoxFlat_ymvhr")
+
+[node name="Label" type="Label" parent="Boton_noCapitalista"]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 554.0
+offset_bottom = 241.0
+theme_override_fonts/font = ExtResource("3_4eo16")
+theme_override_font_sizes/font_size = 24
+text = "De chill hermano, lo mío es tuyo y lo tuyo es mío, paz bro"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+clip_text = true
+
+[connection signal="pressed" from="Boton_capitalista" to="." method="_on_boton_capitalista_pressed"]
+[connection signal="pressed" from="Boton_noCapitalista" to="." method="_on_boton_no_capitalista_pressed"]

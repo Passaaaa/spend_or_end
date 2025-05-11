@@ -1,0 +1,10 @@
+[gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://d31e2v2ph2qrc"]
+
+[ext_resource type="FontFile" uid="uid://0c8blrst4tvx" path="res://01_assets/02_fonts/typo_comica/Typo_Comica_demo.otf" id="1_uf2ge"]
+
+[resource]
+font = ExtResource("1_uf2ge")
+font_size = 24
+font_color = Color(0, 0, 0, 1)
+shadow_color = Color(0.411765, 0.411765, 0.411765, 1)
+shadow_offset = Vector2(3, 1)

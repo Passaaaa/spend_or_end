@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Spend Or End"
-run/main_scene="res://02_scenes/03_levels/01_level01/level_1.tscn"
+run/main_scene="res://02_scenes/04_scenes/03_screens/MainMenu.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 
 [display]
