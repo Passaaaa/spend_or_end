@@ -1,16 +1,19 @@
-[gd_scene load_steps=13 format=3 uid="uid://hp3ntobp07di"]
+[gd_scene load_steps=16 format=3 uid="uid://hp3ntobp07di"]
 
 [ext_resource type="Script" path="res://02_scenes/03_levels/04_level04/level_4.gd" id="1_m5ipa"]
 [ext_resource type="Texture2D" uid="uid://5m2lscdegx7g" path="res://01_assets/01_sprites/02_environments/Ciudad.png" id="3_txv1g"]
+[ext_resource type="AudioStream" uid="uid://do5ciwcplgqf5" path="res://04_audio/01_SFX/fx_seleccionar.mp3" id="4_jyv3k"]
 [ext_resource type="PackedScene" uid="uid://crobhgicb8ade" path="res://02_scenes/03_levels/04_level04/tile_map_LVL4.tscn" id="4_v8np8"]
 [ext_resource type="PackedScene" uid="uid://dae2rl4asaybh" path="res://02_scenes/04_scenes/02_Death/DeathScreen.tscn" id="4_ybmdv"]
+[ext_resource type="AudioStream" uid="uid://dbhsq7e8jf7ti" path="res://04_audio/01_SFX/fx_gameover.mp3" id="5_02pbe"]
 [ext_resource type="PackedScene" uid="uid://d3xlshy53rjlm" path="res://02_scenes/02_items/pinchos.tscn" id="7_32v0q"]
-[ext_resource type="PackedScene" uid="uid://c11a4hfi1ko2u" path="res://02_scenes/01_characters/player.tscn" id="8_y4fww"]
+[ext_resource type="PackedScene" uid="uid://c11a4hfi1ko2u" path="res://02_scenes/01_characters/Player.tscn" id="8_y4fww"]
 [ext_resource type="Script" path="res://02_scenes/04_scenes/03_screens/shopCollision.gd" id="9_km6ph"]
 [ext_resource type="PackedScene" uid="uid://dneqnrtwf1ecm" path="res://02_scenes/01_characters/goomba_02.tscn" id="9_r6u3a"]
 [ext_resource type="PackedScene" uid="uid://x28uvyfxsc43" path="res://02_scenes/01_characters/goomba.tscn" id="9_xynlf"]
 [ext_resource type="PackedScene" uid="uid://bmk7aqnd6a7v" path="res://02_scenes/02_items/jetpack.tscn" id="11_5n3p7"]
 [ext_resource type="PackedScene" uid="uid://cfau8t3wl2kki" path="res://02_scenes/02_items/muerte.tscn" id="12_m4jkg"]
+[ext_resource type="AudioStream" uid="uid://dis5ns28wj6jw" path="res://04_audio/02_music/Music_Lvl03.mp3" id="12_mic88"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_m13fw"]
 size = Vector2(607, 217)
@@ -202,6 +205,13 @@ expand_mode = 1
 
 [node name="DeathScreen" parent="." instance=ExtResource("4_ybmdv")]
 visible = false
+
+[node name="FX_UI" type="AudioStreamPlayer" parent="DeathScreen"]
+stream = ExtResource("4_jyv3k")
+
+[node name="GameOver" type="AudioStreamPlayer" parent="DeathScreen"]
+stream = ExtResource("5_02pbe")
+volume_db = -5.0
 
 [node name="TileMap" parent="." instance=ExtResource("4_v8np8")]
 
@@ -615,5 +625,10 @@ scale = Vector2(1, 4.69)
 [node name="muerte4" parent="." instance=ExtResource("12_m4jkg")]
 position = Vector2(15774, 1)
 scale = Vector2(1, 0.3)
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("12_mic88")
+volume_db = -10.0
+pitch_scale = 0.5
 
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]

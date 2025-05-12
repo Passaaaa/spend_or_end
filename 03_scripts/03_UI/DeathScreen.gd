@@ -1,6 +1,7 @@
 extends CanvasLayer
 
 @onready var fx_ui = $FX_UI  # Nodo de sonido para clics
+@onready var gameover = $GameOver
 
 func _ready():
 	process_mode = Node.PROCESS_MODE_ALWAYS  # Para que funcione en pausa
@@ -8,6 +9,13 @@ func _ready():
 
 func show_screen():
 	visible = true
+	var gameover_path = "res://04_audio/01_SFX/fx_gameover.mp3"
+	if ResourceLoader.exists(gameover_path):
+		var stream = load(gameover_path)
+		gameover.stream = stream
+		gameover.play()
+	else:
+		print("⚠ No se encontró la música:", gameover_path)
 	get_tree().paused = true
 
 func _on_button_reiniciar_pressed():

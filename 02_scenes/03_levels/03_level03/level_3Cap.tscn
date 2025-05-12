@@ -1,22 +1,25 @@
-[gd_scene load_steps=13 format=3 uid="uid://dwvdt22ghsobb"]
+[gd_scene load_steps=16 format=3 uid="uid://dwvdt22ghsobb"]
 
-[ext_resource type="Script" path="res://02_scenes/03_levels/03_level03/level_3.gd" id="1_k8n71"]
+[ext_resource type="Script" path="res://02_scenes/03_levels/03_level03/level_3Cap.gd" id="1_alb77"]
 [ext_resource type="Texture2D" uid="uid://7xbdesi1we1f" path="res://01_assets/01_sprites/02_environments/AlquileresMAsivos.png" id="2_1op2p"]
 [ext_resource type="Texture2D" uid="uid://5m2lscdegx7g" path="res://01_assets/01_sprites/02_environments/Ciudad.png" id="2_hnrkt"]
 [ext_resource type="PackedScene" uid="uid://dae2rl4asaybh" path="res://02_scenes/04_scenes/02_Death/DeathScreen.tscn" id="3_r27ul"]
+[ext_resource type="AudioStream" uid="uid://do5ciwcplgqf5" path="res://04_audio/01_SFX/fx_seleccionar.mp3" id="5_axilw"]
 [ext_resource type="PackedScene" uid="uid://byxloocl1x2b7" path="res://02_scenes/03_levels/03_level03/tile_map_lvl3.tscn" id="5_o6l4f"]
+[ext_resource type="AudioStream" uid="uid://dbhsq7e8jf7ti" path="res://04_audio/01_SFX/fx_gameover.mp3" id="6_0ipws"]
 [ext_resource type="PackedScene" uid="uid://d3xlshy53rjlm" path="res://02_scenes/02_items/pinchos.tscn" id="6_udshu"]
-[ext_resource type="PackedScene" uid="uid://c11a4hfi1ko2u" path="res://02_scenes/01_characters/player.tscn" id="7_dcq5s"]
+[ext_resource type="PackedScene" uid="uid://c11a4hfi1ko2u" path="res://02_scenes/01_characters/Player.tscn" id="7_dcq5s"]
 [ext_resource type="Script" path="res://02_scenes/04_scenes/03_screens/shopCollision.gd" id="8_plnpq"]
 [ext_resource type="PackedScene" uid="uid://ebn7oa0yrdg8" path="res://02_scenes/04_scenes/03_screens/Shop_lvl03.tscn" id="10_hj6nm"]
 [ext_resource type="PackedScene" uid="uid://x28uvyfxsc43" path="res://02_scenes/01_characters/goomba.tscn" id="11_n8tis"]
 [ext_resource type="PackedScene" uid="uid://bmk7aqnd6a7v" path="res://02_scenes/02_items/jetpack.tscn" id="12_kp2sc"]
+[ext_resource type="AudioStream" uid="uid://eyuo5ut8el62" path="res://04_audio/02_music/Music_Lvl02.mp3" id="12_no0mc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_m13fw"]
 size = Vector2(607, 217)
 
 [node name="Level3" type="Node2D"]
-script = ExtResource("1_k8n71")
+script = ExtResource("1_alb77")
 textura = ExtResource("2_1op2p")
 
 [node name="TextureRect" type="TextureRect" parent="."]
@@ -194,6 +197,13 @@ expand_mode = 1
 
 [node name="DeathScreen" parent="." instance=ExtResource("3_r27ul")]
 visible = false
+
+[node name="FX_UI" type="AudioStreamPlayer" parent="DeathScreen"]
+stream = ExtResource("5_axilw")
+
+[node name="GameOver" type="AudioStreamPlayer" parent="DeathScreen"]
+stream = ExtResource("6_0ipws")
+volume_db = -5.0
 
 [node name="TileMap" parent="." instance=ExtResource("5_o6l4f")]
 
@@ -729,5 +739,10 @@ speed = 200.0
 [node name="Goomba14" parent="." instance=ExtResource("11_n8tis")]
 position = Vector2(22106, 561)
 speed = 300.0
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("12_no0mc")
+volume_db = -10.0
+pitch_scale = 0.5
 
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]

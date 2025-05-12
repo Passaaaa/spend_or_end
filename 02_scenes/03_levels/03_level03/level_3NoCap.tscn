@@ -1,15 +1,18 @@
-[gd_scene load_steps=12 format=3 uid="uid://qhgwqnod3oyo"]
+[gd_scene load_steps=15 format=3 uid="uid://qhgwqnod3oyo"]
 
 [ext_resource type="Script" path="res://02_scenes/03_levels/03_level03/level_3.gd" id="1_2bs2m"]
 [ext_resource type="Texture2D" uid="uid://5m2lscdegx7g" path="res://01_assets/01_sprites/02_environments/Ciudad.png" id="2_tmrf5"]
 [ext_resource type="PackedScene" uid="uid://dae2rl4asaybh" path="res://02_scenes/04_scenes/02_Death/DeathScreen.tscn" id="3_36655"]
+[ext_resource type="AudioStream" uid="uid://do5ciwcplgqf5" path="res://04_audio/01_SFX/fx_seleccionar.mp3" id="4_y20yy"]
+[ext_resource type="AudioStream" uid="uid://dbhsq7e8jf7ti" path="res://04_audio/01_SFX/fx_gameover.mp3" id="5_3vibe"]
 [ext_resource type="PackedScene" uid="uid://d3xlshy53rjlm" path="res://02_scenes/02_items/pinchos.tscn" id="6_il0t8"]
-[ext_resource type="PackedScene" uid="uid://c11a4hfi1ko2u" path="res://02_scenes/01_characters/player.tscn" id="7_6awrr"]
+[ext_resource type="PackedScene" uid="uid://c11a4hfi1ko2u" path="res://02_scenes/01_characters/Player.tscn" id="7_6awrr"]
 [ext_resource type="Script" path="res://02_scenes/04_scenes/03_screens/shopCollision.gd" id="8_d8vlg"]
 [ext_resource type="PackedScene" uid="uid://x28uvyfxsc43" path="res://02_scenes/01_characters/goomba.tscn" id="8_ukn13"]
 [ext_resource type="PackedScene" uid="uid://bmk7aqnd6a7v" path="res://02_scenes/02_items/jetpack.tscn" id="9_hp8gx"]
 [ext_resource type="PackedScene" uid="uid://ebn7oa0yrdg8" path="res://02_scenes/04_scenes/03_screens/Shop_lvl03.tscn" id="9_x6egj"]
 [ext_resource type="PackedScene" uid="uid://byxloocl1x2b7" path="res://02_scenes/03_levels/03_level03/tile_map_lvl3.tscn" id="10_caunr"]
+[ext_resource type="AudioStream" uid="uid://dis5ns28wj6jw" path="res://04_audio/02_music/Music_Lvl03.mp3" id="11_pcxbd"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rig6y"]
 size = Vector2(607, 217)
@@ -193,6 +196,13 @@ expand_mode = 1
 
 [node name="DeathScreen" parent="." instance=ExtResource("3_36655")]
 visible = false
+
+[node name="FX_UI" type="AudioStreamPlayer" parent="DeathScreen"]
+stream = ExtResource("4_y20yy")
+
+[node name="GameOver" type="AudioStreamPlayer" parent="DeathScreen"]
+stream = ExtResource("5_3vibe")
+volume_db = -5.0
 
 [node name="TileMap" parent="." instance=ExtResource("10_caunr")]
 
@@ -728,5 +738,9 @@ speed = 200.0
 [node name="Goomba14" parent="." instance=ExtResource("8_ukn13")]
 position = Vector2(22106, 561)
 speed = 300.0
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("11_pcxbd")
+volume_db = -15.0
 
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]

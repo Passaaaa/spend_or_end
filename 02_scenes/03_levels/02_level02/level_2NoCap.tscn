@@ -1,14 +1,17 @@
-[gd_scene load_steps=12 format=3 uid="uid://cpey2xrr02uu3"]
+[gd_scene load_steps=15 format=3 uid="uid://cpey2xrr02uu3"]
 
 [ext_resource type="Texture2D" uid="uid://5m2lscdegx7g" path="res://01_assets/01_sprites/02_environments/Ciudad.png" id="1_5516c"]
 [ext_resource type="PackedScene" uid="uid://dae2rl4asaybh" path="res://02_scenes/04_scenes/02_Death/DeathScreen.tscn" id="2_oramb"]
+[ext_resource type="AudioStream" uid="uid://do5ciwcplgqf5" path="res://04_audio/01_SFX/fx_seleccionar.mp3" id="3_f23dt"]
+[ext_resource type="AudioStream" uid="uid://dbhsq7e8jf7ti" path="res://04_audio/01_SFX/fx_gameover.mp3" id="4_5aikq"]
 [ext_resource type="PackedScene" uid="uid://d3xlshy53rjlm" path="res://02_scenes/02_items/pinchos.tscn" id="5_virjb"]
-[ext_resource type="PackedScene" uid="uid://c11a4hfi1ko2u" path="res://02_scenes/01_characters/player.tscn" id="6_vg460"]
+[ext_resource type="PackedScene" uid="uid://c11a4hfi1ko2u" path="res://02_scenes/01_characters/Player.tscn" id="6_vg460"]
 [ext_resource type="Script" path="res://02_scenes/04_scenes/03_screens/shopCollision.gd" id="7_25j5b"]
 [ext_resource type="PackedScene" uid="uid://dvr465htlmxh8" path="res://02_scenes/04_scenes/03_screens/Shop_lvl02.tscn" id="8_aoows"]
 [ext_resource type="PackedScene" uid="uid://fy77n1uolpqd" path="res://02_scenes/03_levels/02_level02/tile_map_lvl2.tscn" id="9_cen71"]
 [ext_resource type="PackedScene" uid="uid://bmk7aqnd6a7v" path="res://02_scenes/02_items/jetpack.tscn" id="9_j04xj"]
 [ext_resource type="PackedScene" uid="uid://x28uvyfxsc43" path="res://02_scenes/01_characters/goomba.tscn" id="10_cs0xv"]
+[ext_resource type="AudioStream" uid="uid://eyuo5ut8el62" path="res://04_audio/02_music/Music_Lvl02.mp3" id="10_r7npt"]
 
 [sub_resource type="GDScript" id="GDScript_t4ny2"]
 script/source = "extends Node2D
@@ -17,9 +20,15 @@ script/source = "extends Node2D
 var background: Array[TextureRect] = []
 @export var textura: Texture2D 
 # Called when the node enters the scene tree for the first time.
+@onready var music = $Music
 
 func _ready():
-
+	var music_path = \"res://04_audio/02_music/Music_Lvl02.mp3\"
+	if ResourceLoader.exists(music_path):
+		var stream = load(music_path)
+		music.stream = stream
+		music.play()
+		
 	for child in get_children():
 		if child is TextureRect:
 			background.append(child)
@@ -221,6 +230,13 @@ expand_mode = 1
 [node name="DeathScreen" parent="." instance=ExtResource("2_oramb")]
 visible = false
 
+[node name="FX_UI" type="AudioStreamPlayer" parent="DeathScreen"]
+stream = ExtResource("3_f23dt")
+
+[node name="GameOver" type="AudioStreamPlayer" parent="DeathScreen"]
+stream = ExtResource("4_5aikq")
+volume_db = -5.0
+
 [node name="TileMap" parent="." instance=ExtResource("9_cen71")]
 
 [node name="Pinchos" parent="." instance=ExtResource("5_virjb")]
@@ -298,5 +314,9 @@ speed = 500.0
 [node name="Goomba5" parent="." instance=ExtResource("10_cs0xv")]
 position = Vector2(22307, 629)
 speed = 500.0
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_r7npt")
+volume_db = -15.0
 
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
