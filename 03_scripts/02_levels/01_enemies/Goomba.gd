@@ -28,6 +28,8 @@ func _on_screen_notifier_screen_entered():
 func _on_top_detector_body_entered(body):
 	print("🟩 Golpe por encima detectado")  # Debug
 	if body.is_in_group("player"):
+		if body.has_method("play_sound"):
+			body.play_sound("res://04_audio/01_SFX/fx_enemy_hit.mp3")
 		body.velocity.y = bounce_force  # Rebota al jugador hacia arriba
 		queue_free()  # Eliminar enemigo
 

@@ -1,6 +1,7 @@
-[gd_scene load_steps=13 format=3 uid="uid://bksxhw20l3ihj"]
+[gd_scene load_steps=15 format=3 uid="uid://bksxhw20l3ihj"]
 
-[ext_resource type="PackedScene" uid="uid://c11a4hfi1ko2u" path="res://02_scenes/01_characters/player.tscn" id="1_8giqc"]
+[ext_resource type="Script" path="res://02_scenes/03_levels/01_level01/level_1.gd" id="1_2adpu"]
+[ext_resource type="PackedScene" uid="uid://c11a4hfi1ko2u" path="res://02_scenes/01_characters/Player.tscn" id="1_8giqc"]
 [ext_resource type="Texture2D" uid="uid://5m2lscdegx7g" path="res://01_assets/01_sprites/02_environments/Ciudad.png" id="1_chm07"]
 [ext_resource type="PackedScene" uid="uid://dae2rl4asaybh" path="res://02_scenes/04_scenes/02_Death/DeathScreen.tscn" id="3_vq1li"]
 [ext_resource type="PackedScene" uid="uid://d3xlshy53rjlm" path="res://02_scenes/02_items/pinchos.tscn" id="4_kiep1"]
@@ -8,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://b5reuuyn1l3tj" path="res://01_assets/01_sprites/02_environments/roadTile.png" id="5_5ttmf"]
 [ext_resource type="Script" path="res://02_scenes/04_scenes/03_screens/shopCollision.gd" id="7_mkalg"]
 [ext_resource type="PackedScene" uid="uid://drnnvxc3vs00j" path="res://02_scenes/04_scenes/03_screens/Shoplvl01.tscn" id="8_11ean"]
+[ext_resource type="AudioStream" uid="uid://do5ciwcplgqf5" path="res://04_audio/01_SFX/fx_seleccionar.mp3" id="10_jvdeh"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_s0ylt"]
 texture = ExtResource("5_1qgj4")
@@ -680,6 +682,7 @@ sources/1 = SubResource("TileSetAtlasSource_sevao")
 size = Vector2(607, 217)
 
 [node name="Level1" type="Node2D"]
+script = ExtResource("1_2adpu")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 modulate = Color(0.7, 0.7, 0.7, 1)
@@ -857,6 +860,9 @@ expand_mode = 1
 [node name="DeathScreen" parent="." instance=ExtResource("3_vq1li")]
 visible = false
 
+[node name="FX_UI" type="AudioStreamPlayer" parent="DeathScreen"]
+stream = ExtResource("10_jvdeh")
+
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_twjks")
 rendering_quadrant_size = 32
@@ -915,5 +921,8 @@ tienda = ExtResource("8_11ean")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(-293.5, 11.5)
 shape = SubResource("RectangleShape2D_m13fw")
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+volume_db = -15.0
 
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]

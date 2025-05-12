@@ -27,7 +27,7 @@ shape = SubResource("CircleShape2D_c0pr0")
 [node name="TopDetector" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TopDetector"]
-position = Vector2(3.46102, -18.0629)
+position = Vector2(5.70594, -17.7823)
 scale = Vector2(0.559999, 3)
 shape = SubResource("RectangleShape2D_dk2i0")
 
@@ -38,7 +38,7 @@ scale = Vector2(2.6, 2.6125)
 [node name="Hitbox" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
-position = Vector2(-15.626, 15.6756)
+position = Vector2(-15.9066, 15.6756)
 scale = Vector2(1.2, 1)
 shape = SubResource("CapsuleShape2D_upjrk")
 

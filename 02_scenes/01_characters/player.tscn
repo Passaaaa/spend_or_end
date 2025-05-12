@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://c11a4hfi1ko2u"]
+[gd_scene load_steps=13 format=3 uid="uid://c11a4hfi1ko2u"]
 
 [ext_resource type="Script" path="res://03_scripts/01_characters/player.gd" id="1_qhgud"]
 [ext_resource type="Texture2D" uid="uid://5svnbsec7cuw" path="res://01_assets/01_sprites/01_characters/Caminado01.png" id="2_2k7tb"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://bwnlf12wenkpi" path="res://01_assets/01_sprites/01_characters/Caminado06.png" id="7_16c7v"]
 [ext_resource type="Texture2D" uid="uid://c8rmwywi7lg1y" path="res://01_assets/01_sprites/01_characters/Caminado07.png" id="8_1o6om"]
 [ext_resource type="Texture2D" uid="uid://by6msjni5g4iw" path="res://01_assets/01_sprites/01_characters/player_jetpack.png" id="9_6c216"]
+[ext_resource type="Texture2D" uid="uid://cmjge5gb3hxis" path="res://01_assets/01_sprites/01_characters/dead_pedro.png" id="10_au8vs"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_y56pf"]
 size = Vector2(59, 74)
@@ -62,3 +63,11 @@ visible = false
 position = Vector2(-4, 5)
 scale = Vector2(0.11, 0.11)
 texture = ExtResource("9_6c216")
+
+[node name="DeadSprite" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(1, 7)
+scale = Vector2(0.12, 0.12)
+texture = ExtResource("10_au8vs")
+
+[node name="SFX" type="AudioStreamPlayer2D" parent="."]
