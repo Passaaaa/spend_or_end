@@ -1,12 +1,14 @@
-[gd_scene load_steps=14 format=3 uid="uid://d0kfqxqpd6hce"]
+[gd_scene load_steps=16 format=3 uid="uid://d0kfqxqpd6hce"]
 
 [ext_resource type="Script" path="res://02_scenes/03_levels/04_level04/level_4NoCap.gd" id="1_pqrds"]
 [ext_resource type="Texture2D" uid="uid://5m2lscdegx7g" path="res://01_assets/01_sprites/02_environments/Ciudad.png" id="3_wdj3d"]
+[ext_resource type="AudioStream" uid="uid://do5ciwcplgqf5" path="res://04_audio/01_SFX/fx_seleccionar.mp3" id="4_c6d2m"]
 [ext_resource type="PackedScene" uid="uid://dae2rl4asaybh" path="res://02_scenes/04_scenes/02_Death/DeathScreen.tscn" id="4_ddt43"]
 [ext_resource type="PackedScene" uid="uid://crobhgicb8ade" path="res://02_scenes/03_levels/04_level04/tile_map_LVL4.tscn" id="4_jvqyc"]
+[ext_resource type="AudioStream" uid="uid://dbhsq7e8jf7ti" path="res://04_audio/01_SFX/fx_gameover.mp3" id="5_kt0wx"]
 [ext_resource type="PackedScene" uid="uid://dneqnrtwf1ecm" path="res://02_scenes/01_characters/goomba_02.tscn" id="7_f7tf4"]
 [ext_resource type="PackedScene" uid="uid://d3xlshy53rjlm" path="res://02_scenes/02_items/pinchos.tscn" id="7_uw0s2"]
-[ext_resource type="PackedScene" uid="uid://c11a4hfi1ko2u" path="res://02_scenes/01_characters/Player.tscn" id="8_itruv"]
+[ext_resource type="PackedScene" uid="uid://c11a4hfi1ko2u" path="res://02_scenes/01_characters/player.tscn" id="8_itruv"]
 [ext_resource type="PackedScene" uid="uid://x28uvyfxsc43" path="res://02_scenes/01_characters/goomba.tscn" id="8_lxy4c"]
 [ext_resource type="PackedScene" uid="uid://bmk7aqnd6a7v" path="res://02_scenes/02_items/jetpack.tscn" id="9_4bwim"]
 [ext_resource type="Script" path="res://02_scenes/04_scenes/03_screens/shopCollision.gd" id="9_vpy65"]
@@ -203,6 +205,14 @@ expand_mode = 1
 
 [node name="DeathScreen" parent="." instance=ExtResource("4_ddt43")]
 visible = false
+
+[node name="FX_UI" type="AudioStreamPlayer" parent="DeathScreen"]
+stream = ExtResource("4_c6d2m")
+bus = &"Sfx"
+
+[node name="GameOver" type="AudioStreamPlayer" parent="DeathScreen"]
+stream = ExtResource("5_kt0wx")
+volume_db = -5.0
 
 [node name="TileMap" parent="." instance=ExtResource("4_jvqyc")]
 

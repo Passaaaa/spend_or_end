@@ -100,6 +100,7 @@ clip_text = true
 
 [node name="FX_UI" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_rrige")
+bus = &"Sfx"
 
 [connection signal="pressed" from="Boton_capitalista" to="." method="_on_boton_capitalista_pressed"]
 [connection signal="pressed" from="Boton_noCapitalista" to="." method="_on_boton_no_capitalista_pressed"]

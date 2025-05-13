@@ -1,10 +1,11 @@
-[gd_scene load_steps=14 format=3 uid="uid://dvr465htlmxh8"]
+[gd_scene load_steps=15 format=3 uid="uid://dvr465htlmxh8"]
 
 [ext_resource type="Script" path="res://02_scenes/04_scenes/03_screens/Shop.gd" id="1_54445"]
 [ext_resource type="Texture2D" uid="uid://tfmio1tywvt6" path="res://01_assets/01_sprites/03_UI/Shop/ShopBackground.png" id="2_3cnqb"]
 [ext_resource type="PackedScene" uid="uid://qhgwqnod3oyo" path="res://02_scenes/03_levels/03_level03/level_3NoCap.tscn" id="2_j0fl7"]
 [ext_resource type="FontFile" uid="uid://0c8blrst4tvx" path="res://01_assets/02_fonts/typo_comica/Typo_Comica_demo.otf" id="3_g40s6"]
 [ext_resource type="PackedScene" uid="uid://dwvdt22ghsobb" path="res://02_scenes/03_levels/03_level03/level_3Cap.tscn" id="3_q78ib"]
+[ext_resource type="AudioStream" uid="uid://brvedfjdywhiv" path="res://04_audio/01_SFX/fx_decision.mp3" id="6_gfbwp"]
 
 [sub_resource type="Theme" id="Theme_6o8l8"]
 
@@ -96,6 +97,10 @@ horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
 clip_text = true
+
+[node name="FX_UI" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_gfbwp")
+bus = &"Sfx"
 
 [connection signal="pressed" from="Boton_capitalista" to="." method="_on_boton_capitalista_pressed"]
 [connection signal="pressed" from="Boton_noCapitalista" to="." method="_on_boton_no_capitalista_pressed"]

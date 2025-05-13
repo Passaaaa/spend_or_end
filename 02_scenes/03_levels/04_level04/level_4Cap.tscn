@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://dae2rl4asaybh" path="res://02_scenes/04_scenes/02_Death/DeathScreen.tscn" id="4_ybmdv"]
 [ext_resource type="AudioStream" uid="uid://dbhsq7e8jf7ti" path="res://04_audio/01_SFX/fx_gameover.mp3" id="5_02pbe"]
 [ext_resource type="PackedScene" uid="uid://d3xlshy53rjlm" path="res://02_scenes/02_items/pinchos.tscn" id="7_32v0q"]
-[ext_resource type="PackedScene" uid="uid://c11a4hfi1ko2u" path="res://02_scenes/01_characters/Player.tscn" id="8_y4fww"]
+[ext_resource type="PackedScene" uid="uid://c11a4hfi1ko2u" path="res://02_scenes/01_characters/player.tscn" id="8_y4fww"]
 [ext_resource type="Script" path="res://02_scenes/04_scenes/03_screens/shopCollision.gd" id="9_km6ph"]
 [ext_resource type="PackedScene" uid="uid://dneqnrtwf1ecm" path="res://02_scenes/01_characters/goomba_02.tscn" id="9_r6u3a"]
 [ext_resource type="PackedScene" uid="uid://x28uvyfxsc43" path="res://02_scenes/01_characters/goomba.tscn" id="9_xynlf"]
@@ -208,6 +208,7 @@ visible = false
 
 [node name="FX_UI" type="AudioStreamPlayer" parent="DeathScreen"]
 stream = ExtResource("4_jyv3k")
+bus = &"Sfx"
 
 [node name="GameOver" type="AudioStreamPlayer" parent="DeathScreen"]
 stream = ExtResource("5_02pbe")

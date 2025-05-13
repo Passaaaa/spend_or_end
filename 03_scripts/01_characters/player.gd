@@ -22,16 +22,22 @@ var jetpack_active = false
 var jetpack_timer = 0.0
 var has_died = false
 
+
+
 @onready var sfx = $SFX
 @onready var player_sprite = $PlayerSprite
 @onready var jetpack_sprite = $JetpackSprite
 @onready var dead_sprite = $DeadSprite
+
 
 func _ready():
 	add_to_group("player")
 	jetpack_sprite.visible = false
 	player_sprite.visible = true
 	dead_sprite.visible = false
+	
+	
+
 
 func _physics_process(delta: float) -> void:
 	if has_died:
@@ -126,6 +132,7 @@ func die():
 
 func play_sound(path: String):
 	print("Reproduciendo en nodo:", sfx.get_path())  # TEMPORAL DEBUG
+	sfx.bus = "sfx"
 	if not sfx:
 		print("Error: nodo SFX no encontrado")
 		return
@@ -138,3 +145,11 @@ func play_sound(path: String):
 			sfx.play()
 	else:
 		print("Audio no encontrado: ", path)
+
+
+	
+
+	
+
+
+

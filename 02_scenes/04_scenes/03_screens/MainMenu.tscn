@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://cfcmhdj054sqe"]
+[gd_scene load_steps=22 format=3 uid="uid://cfcmhdj054sqe"]
 
 [ext_resource type="Script" path="res://03_scripts/03_UI/MainMenu.gd" id="1_77v5r"]
 [ext_resource type="Texture2D" uid="uid://d227a8uaur7pc" path="res://01_assets/01_sprites/03_UI/Background.png" id="2_qgjhp"]
@@ -17,6 +17,7 @@
 [ext_resource type="FontFile" uid="uid://0c8blrst4tvx" path="res://01_assets/02_fonts/typo_comica/Typo_Comica_demo.otf" id="15_wu85y"]
 [ext_resource type="LabelSettings" uid="uid://d31e2v2ph2qrc" path="res://03_scripts/03_UI/TextLabelSettings.tres" id="16_yromt"]
 [ext_resource type="AudioStream" uid="uid://6pk04pyp2ka6" path="res://04_audio/02_music/Music_StartMenu.mp3" id="17_4jv8u"]
+[ext_resource type="Texture2D" uid="uid://cotncpjqik56c" path="res://01_assets/01_sprites/03_UI/PedroAsecasPresidente.png" id="17_41b1x"]
 [ext_resource type="AudioStream" uid="uid://do5ciwcplgqf5" path="res://04_audio/01_SFX/fx_seleccionar.mp3" id="18_huh6v"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_j4gqh"]
@@ -39,6 +40,7 @@ animations = [{
 [sub_resource type="CanvasTexture" id="CanvasTexture_73agi"]
 
 [node name="MainMenu" type="CanvasLayer"]
+process_mode = 3
 script = ExtResource("1_77v5r")
 
 [node name="Background" type="TextureRect" parent="."]
@@ -183,7 +185,7 @@ autoplay = true
 loop = true
 
 [node name="Marco" type="TextureRect" parent="TutorialPanel"]
-modulate = Color(0, 1, 0.313726, 1)
+modulate = Color(0.0941176, 0.0901961, 0.392157, 1)
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
@@ -289,8 +291,8 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="TextureRect2" type="TextureRect" parent="IntroPanel"]
-modulate = Color(0, 1, 0.313726, 1)
+[node name="Background" type="TextureRect" parent="IntroPanel"]
+modulate = Color(0.0941176, 0.0901961, 0.392157, 1)
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -305,9 +307,9 @@ texture = SubResource("CanvasTexture_73agi")
 
 [node name="Button_tutorial" type="TextureButton" parent="IntroPanel"]
 layout_mode = 0
-offset_left = 980.0
+offset_left = 812.0
 offset_top = 580.0
-offset_right = 1330.0
+offset_right = 1162.0
 offset_bottom = 705.0
 scale = Vector2(0.7, 0.7)
 texture_normal = ExtResource("8_rsdn2")
@@ -333,23 +335,33 @@ vertical_alignment = 1
 
 [node name="TextureRect" type="TextureRect" parent="IntroPanel"]
 layout_mode = 0
-offset_left = 228.0
-offset_top = 164.0
-offset_right = 1041.0
-offset_bottom = 534.0
+offset_left = 617.0
+offset_top = 66.0
+offset_right = 1215.0
+offset_bottom = 559.0
 texture = SubResource("CanvasTexture_73agi")
 
 [node name="Label" type="Label" parent="IntroPanel/TextureRect"]
 layout_mode = 0
 offset_left = 41.0
-offset_top = -36.0
-offset_right = 772.0
-offset_bottom = 403.0
+offset_top = 25.0
+offset_right = 558.0
+offset_bottom = 464.0
 text = "You've been elected as the new President, congrats... I guess? So, now you're the one in charge of this whole shebang. You'll be calling the shots on our future, so, you know, try not to mess it up too badly. Your decisions? Yeah, they'll have consequences for us (potentially really, really bad ones...). Anyway, time to kick off your presidential adventure! Head on over to the Oval Office and start making those super important, life-altering decisions. ALL IS UP TO YOU. No pressure though! Good luck with that!"
 label_settings = ExtResource("16_yromt")
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
+
+[node name="Cartel" type="TextureRect" parent="IntroPanel"]
+layout_mode = 0
+offset_left = -3.0
+offset_top = 1.0
+offset_right = 552.0
+offset_bottom = 721.0
+texture = ExtResource("17_41b1x")
+expand_mode = 1
+stretch_mode = 4
 
 [node name="OpcionesPanel" type="Panel" parent="."]
 visible = false
@@ -359,43 +371,194 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Label_volumenMusica" type="Label" parent="OpcionesPanel"]
+[node name="TextureRect" type="TextureRect" parent="OpcionesPanel"]
+modulate = Color(0.709804, 0.709804, 0.709804, 1)
+offset_right = 1280.0
+offset_bottom = 720.0
+texture = ExtResource("2_qgjhp")
+expand_mode = 1
+
+[node name="BackGift" type="AnimatedSprite2D" parent="OpcionesPanel"]
+modulate = Color(0.709804, 0.709804, 0.709804, 1)
+position = Vector2(640, 360)
+scale = Vector2(0.666667, 0.666667)
+sprite_frames = SubResource("SpriteFrames_j4gqh")
+autoplay = "default"
+frame_progress = 0.740623
+
+[node name="BackTextMusic" type="TextureRect" parent="OpcionesPanel"]
 layout_mode = 0
-offset_left = 335.0
-offset_top = 259.0
-offset_right = 375.0
-offset_bottom = 282.0
-text = "Volumen de Musica"
+offset_left = 248.0
+offset_top = 246.0
+offset_right = 598.0
+offset_bottom = 371.0
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("8_rsdn2")
+
+[node name="Label_volumenMusica" type="Label" parent="OpcionesPanel/BackTextMusic"]
+layout_mode = 0
+offset_left = 77.0
+offset_top = 21.0
+offset_right = 274.0
+offset_bottom = 104.0
+text = "MUSIC
+"
+label_settings = ExtResource("11_njyvy")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BackTextMusic2" type="TextureRect" parent="OpcionesPanel"]
+layout_mode = 0
+offset_left = 798.0
+offset_top = 246.0
+offset_right = 1148.0
+offset_bottom = 371.0
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("8_rsdn2")
+
+[node name="Label_volumenEfectos" type="Label" parent="OpcionesPanel/BackTextMusic2"]
+layout_mode = 0
+offset_left = 97.0
+offset_top = 23.0
+offset_right = 250.0
+offset_bottom = 106.0
+text = "SFX
+"
+label_settings = ExtResource("11_njyvy")
+horizontal_alignment = 1
 
 [node name="MusicaSlider" type="HSlider" parent="OpcionesPanel"]
 layout_mode = 0
-offset_left = 400.0
-offset_top = 370.0
-offset_right = 408.0
-offset_bottom = 386.0
-
-[node name="Label2_volumenEfectos" type="Label" parent="OpcionesPanel"]
-layout_mode = 0
-offset_left = 789.0
-offset_top = 261.0
-offset_right = 942.0
-offset_bottom = 284.0
-text = "Volumen de efectos"
+offset_left = 206.0
+offset_top = 381.0
+offset_right = 534.0
+offset_bottom = 397.0
+min_value = -25.0
+max_value = 25.0
+rounded = true
+tick_count = 3
 
 [node name="SfxSlider" type="HSlider" parent="OpcionesPanel"]
 layout_mode = 0
-offset_left = 868.0
-offset_top = 363.0
-offset_right = 876.0
-offset_bottom = 379.0
+offset_left = 756.0
+offset_top = 381.0
+offset_right = 1084.0
+offset_bottom = 397.0
+min_value = -30.0
+max_value = 30.0
+tick_count = 3
 
-[node name="Button_volver" type="Button" parent="OpcionesPanel"]
+[node name="Button_volver" type="TextureButton" parent="OpcionesPanel"]
 layout_mode = 0
-offset_left = 601.0
-offset_top = 594.0
-offset_right = 670.0
-offset_bottom = 625.0
-text = "VOLVER"
+offset_left = 519.0
+offset_top = 558.0
+offset_right = 869.0
+offset_bottom = 683.0
+scale = Vector2(0.7, 0.7)
+texture_normal = ExtResource("8_rsdn2")
+texture_pressed = ExtResource("9_8y1c4")
+texture_hover = ExtResource("10_oru7d")
+
+[node name="Label" type="Label" parent="OpcionesPanel/Button_volver"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.098
+anchor_top = 0.168
+anchor_right = 0.898
+anchor_bottom = 0.824
+offset_left = 45.7
+offset_right = -46.3
+offset_bottom = 1.0
+text = "BACK"
+label_settings = ExtResource("11_njyvy")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="OpcionesPanelPausa" type="Panel" parent="."]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="OpcionesPanelPausa"]
+modulate = Color(0.709804, 0.709804, 0.709804, 1)
+offset_right = 1280.0
+offset_bottom = 720.0
+texture = ExtResource("2_qgjhp")
+expand_mode = 1
+
+[node name="BackGift" type="AnimatedSprite2D" parent="OpcionesPanelPausa"]
+modulate = Color(0.709804, 0.709804, 0.709804, 1)
+position = Vector2(640, 360)
+scale = Vector2(0.666667, 0.666667)
+sprite_frames = SubResource("SpriteFrames_j4gqh")
+autoplay = "default"
+frame_progress = 0.740623
+
+[node name="BackTextMusic" type="TextureRect" parent="OpcionesPanelPausa"]
+layout_mode = 0
+offset_left = 248.0
+offset_top = 246.0
+offset_right = 598.0
+offset_bottom = 371.0
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("8_rsdn2")
+
+[node name="Label_volumenMusica" type="Label" parent="OpcionesPanelPausa/BackTextMusic"]
+layout_mode = 0
+offset_left = 77.0
+offset_top = 21.0
+offset_right = 274.0
+offset_bottom = 104.0
+text = "MUSIC
+"
+label_settings = ExtResource("11_njyvy")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BackTextMusic2" type="TextureRect" parent="OpcionesPanelPausa"]
+layout_mode = 0
+offset_left = 798.0
+offset_top = 246.0
+offset_right = 1148.0
+offset_bottom = 371.0
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("8_rsdn2")
+
+[node name="Label_volumenEfectos" type="Label" parent="OpcionesPanelPausa/BackTextMusic2"]
+layout_mode = 0
+offset_left = 97.0
+offset_top = 23.0
+offset_right = 250.0
+offset_bottom = 106.0
+text = "SFX
+"
+label_settings = ExtResource("11_njyvy")
+horizontal_alignment = 1
+
+[node name="MusicaSliderPausa" type="HSlider" parent="OpcionesPanelPausa"]
+layout_mode = 0
+offset_left = 206.0
+offset_top = 381.0
+offset_right = 534.0
+offset_bottom = 397.0
+min_value = -25.0
+max_value = 25.0
+rounded = true
+tick_count = 3
+
+[node name="SfxSliderPausa" type="HSlider" parent="OpcionesPanelPausa"]
+layout_mode = 0
+offset_left = 756.0
+offset_top = 381.0
+offset_right = 1084.0
+offset_bottom = 397.0
+min_value = -30.0
+max_value = 30.0
+tick_count = 3
 
 [node name="Music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("17_4jv8u")
@@ -404,10 +567,15 @@ autoplay = true
 
 [node name="FX_UI" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("18_huh6v")
+bus = &"Sfx"
 
 [connection signal="pressed" from="Background/VBoxContainer/Button_empezar" to="." method="_on_button_empezar_pressed"]
 [connection signal="pressed" from="Background/VBoxContainer/Button_opciones" to="." method="_on_button_opciones_pressed"]
 [connection signal="pressed" from="Background/VBoxContainer/Button_salir" to="." method="_on_button_salir_pressed"]
 [connection signal="pressed" from="TutorialPanel/Button_empezarLvl" to="." method="_on_button_empezar_lvl_pressed"]
 [connection signal="pressed" from="IntroPanel/Button_tutorial" to="." method="_on_button_tutorial_pressed"]
+[connection signal="value_changed" from="OpcionesPanel/MusicaSlider" to="." method="_on_musica_slider_value_changed"]
+[connection signal="value_changed" from="OpcionesPanel/SfxSlider" to="." method="_on_sfx_slider_value_changed"]
 [connection signal="pressed" from="OpcionesPanel/Button_volver" to="." method="_on_button_volver_pressed"]
+[connection signal="value_changed" from="OpcionesPanelPausa/MusicaSliderPausa" to="." method="_on_musica_slider_value_changed"]
+[connection signal="value_changed" from="OpcionesPanelPausa/SfxSliderPausa" to="." method="_on_sfx_slider_value_changed"]
