@@ -1,8 +1,6 @@
-[gd_scene load_steps=22 format=3 uid="uid://cfcmhdj054sqe"]
+[gd_scene load_steps=20 format=3 uid="uid://cfcmhdj054sqe"]
 
 [ext_resource type="Script" path="res://03_scripts/03_UI/MainMenu.gd" id="1_77v5r"]
-[ext_resource type="Texture2D" uid="uid://d227a8uaur7pc" path="res://01_assets/01_sprites/03_UI/Background.png" id="2_qgjhp"]
-[ext_resource type="Texture2D" uid="uid://cspnj51jwyur3" path="res://01_assets/01_sprites/03_UI/Title.png" id="3_gn24h"]
 [ext_resource type="Texture2D" uid="uid://cs5lkr2wk0jtv" path="res://01_assets/01_sprites/03_UI/BackGif01.png" id="3_nequp"]
 [ext_resource type="Texture2D" uid="uid://cf5jrht86htey" path="res://01_assets/01_sprites/03_UI/BackGif02.png" id="4_yx8lb"]
 [ext_resource type="Texture2D" uid="uid://08e0uhrwx56q" path="res://01_assets/01_sprites/03_UI/BackGif03.png" id="5_wbweq"]
@@ -43,15 +41,15 @@ animations = [{
 process_mode = 3
 script = ExtResource("1_77v5r")
 
-[node name="Background" type="TextureRect" parent="."]
+[node name="Background" type="ColorRect" parent="."]
+visible = false
 offset_right = 1280.0
 offset_bottom = 720.0
-texture = ExtResource("2_qgjhp")
-expand_mode = 1
+color = Color(0.143272, 0.1357, 0.59, 1)
 
 [node name="BackGift" type="AnimatedSprite2D" parent="Background"]
-position = Vector2(640, 360)
-scale = Vector2(0.666667, 0.666667)
+position = Vector2(640, 361.5)
+scale = Vector2(1, 1.00417)
 sprite_frames = SubResource("SpriteFrames_j4gqh")
 autoplay = "default"
 frame_progress = 0.740623
@@ -66,17 +64,12 @@ expand_mode = 1
 [node name="VBoxContainer" type="VBoxContainer" parent="Background"]
 clip_contents = true
 layout_mode = 0
-offset_left = 426.5
-offset_top = 60.0
-offset_right = 1036.5
-offset_bottom = 916.0
+offset_left = 413.5
+offset_top = 218.0
+offset_right = 1023.5
+offset_bottom = 1074.0
 scale = Vector2(0.7, 0.7)
 alignment = 1
-
-[node name="TextureRect" type="TextureRect" parent="Background/VBoxContainer"]
-layout_mode = 2
-texture = ExtResource("3_gn24h")
-stretch_mode = 5
 
 [node name="Button_empezar" type="TextureButton" parent="Background/VBoxContainer"]
 clip_children = 2
@@ -371,17 +364,17 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="TextureRect" type="TextureRect" parent="OpcionesPanel"]
+[node name="Background" type="ColorRect" parent="OpcionesPanel"]
 modulate = Color(0.709804, 0.709804, 0.709804, 1)
+layout_mode = 0
 offset_right = 1280.0
 offset_bottom = 720.0
-texture = ExtResource("2_qgjhp")
-expand_mode = 1
+color = Color(0.143272, 0.1357, 0.59, 1)
 
 [node name="BackGift" type="AnimatedSprite2D" parent="OpcionesPanel"]
 modulate = Color(0.709804, 0.709804, 0.709804, 1)
-position = Vector2(640, 360)
-scale = Vector2(0.666667, 0.666667)
+position = Vector2(640, 361.5)
+scale = Vector2(1, 1.00417)
 sprite_frames = SubResource("SpriteFrames_j4gqh")
 autoplay = "default"
 frame_progress = 0.740623
@@ -476,24 +469,22 @@ vertical_alignment = 1
 autowrap_mode = 3
 
 [node name="OpcionesPanelPausa" type="Panel" parent="."]
-visible = false
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="TextureRect" type="TextureRect" parent="OpcionesPanelPausa"]
+[node name="Background" type="ColorRect" parent="OpcionesPanelPausa"]
 modulate = Color(0.709804, 0.709804, 0.709804, 1)
 offset_right = 1280.0
 offset_bottom = 720.0
-texture = ExtResource("2_qgjhp")
-expand_mode = 1
+color = Color(0.143272, 0.1357, 0.59, 1)
 
 [node name="BackGift" type="AnimatedSprite2D" parent="OpcionesPanelPausa"]
 modulate = Color(0.709804, 0.709804, 0.709804, 1)
-position = Vector2(640, 360)
-scale = Vector2(0.666667, 0.666667)
+position = Vector2(640, 361.5)
+scale = Vector2(1, 1.00417)
 sprite_frames = SubResource("SpriteFrames_j4gqh")
 autoplay = "default"
 frame_progress = 0.740623
