@@ -5,7 +5,7 @@
 [ext_resource type="AudioStream" uid="uid://do5ciwcplgqf5" path="res://04_audio/01_SFX/fx_seleccionar.mp3" id="3_f23dt"]
 [ext_resource type="AudioStream" uid="uid://dbhsq7e8jf7ti" path="res://04_audio/01_SFX/fx_gameover.mp3" id="4_5aikq"]
 [ext_resource type="PackedScene" uid="uid://d3xlshy53rjlm" path="res://02_scenes/02_items/pinchos.tscn" id="5_virjb"]
-[ext_resource type="PackedScene" uid="uid://c11a4hfi1ko2u" path="res://02_scenes/01_characters/player.tscn" id="6_vg460"]
+[ext_resource type="PackedScene" uid="uid://c11a4hfi1ko2u" path="res://02_scenes/01_characters/Player.tscn" id="6_vg460"]
 [ext_resource type="Script" path="res://02_scenes/04_scenes/03_screens/shopCollision.gd" id="7_25j5b"]
 [ext_resource type="PackedScene" uid="uid://dvr465htlmxh8" path="res://02_scenes/04_scenes/03_screens/Shop_lvl02.tscn" id="8_aoows"]
 [ext_resource type="PackedScene" uid="uid://fy77n1uolpqd" path="res://02_scenes/03_levels/02_level02/tile_map_lvl2.tscn" id="9_cen71"]

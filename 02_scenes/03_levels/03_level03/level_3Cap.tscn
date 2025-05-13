@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://byxloocl1x2b7" path="res://02_scenes/03_levels/03_level03/tile_map_lvl3.tscn" id="5_o6l4f"]
 [ext_resource type="AudioStream" uid="uid://dbhsq7e8jf7ti" path="res://04_audio/01_SFX/fx_gameover.mp3" id="6_0ipws"]
 [ext_resource type="PackedScene" uid="uid://d3xlshy53rjlm" path="res://02_scenes/02_items/pinchos.tscn" id="6_udshu"]
-[ext_resource type="PackedScene" uid="uid://c11a4hfi1ko2u" path="res://02_scenes/01_characters/player.tscn" id="7_dcq5s"]
+[ext_resource type="PackedScene" uid="uid://c11a4hfi1ko2u" path="res://02_scenes/01_characters/Player.tscn" id="7_dcq5s"]
 [ext_resource type="Script" path="res://02_scenes/04_scenes/03_screens/shopCollision.gd" id="8_plnpq"]
 [ext_resource type="PackedScene" uid="uid://ebn7oa0yrdg8" path="res://02_scenes/04_scenes/03_screens/Shop_lvl03.tscn" id="10_hj6nm"]
 [ext_resource type="PackedScene" uid="uid://x28uvyfxsc43" path="res://02_scenes/01_characters/goomba.tscn" id="11_n8tis"]

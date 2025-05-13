@@ -102,5 +102,8 @@ clip_text = true
 stream = ExtResource("6_bcu7b")
 bus = &"Sfx"
 
+[node name="Music" type="AudioStreamPlayer" parent="."]
+volume_db = -10.0
+
 [connection signal="pressed" from="Boton_capitalista" to="." method="_on_boton_capitalista_pressed"]
 [connection signal="pressed" from="Boton_noCapitalista" to="." method="_on_boton_no_capitalista_pressed"]

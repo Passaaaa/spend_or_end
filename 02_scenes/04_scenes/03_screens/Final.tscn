@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://b2kbljfdvoj8p"]
+[gd_scene load_steps=5 format=3 uid="uid://b2kbljfdvoj8p"]
 
 [ext_resource type="Texture2D" uid="uid://blpjfxoveao0r" path="res://01_assets/01_sprites/03_UI/FinalBueno.png" id="1_gn7cv"]
 [ext_resource type="LabelSettings" uid="uid://d31e2v2ph2qrc" path="res://03_scripts/03_UI/TextLabelSettings.tres" id="2_lepyv"]
 [ext_resource type="FontFile" uid="uid://0c8blrst4tvx" path="res://01_assets/02_fonts/typo_comica/Typo_Comica_demo.otf" id="3_ymrxa"]
+[ext_resource type="AudioStream" uid="uid://be8bpc3c2hq1h" path="res://04_audio/02_music/Music_Final.mp3" id="4_dnd0k"]
 
 [node name="Node2D" type="Node2D"]
 
@@ -37,3 +38,8 @@ offset_bottom = 622.0
 theme_override_fonts/font = ExtResource("3_ymrxa")
 theme_override_font_sizes/font_size = 70
 step = 1.0
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_dnd0k")
+volume_db = -10.0
+autoplay = true

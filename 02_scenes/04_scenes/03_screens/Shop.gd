@@ -4,10 +4,16 @@ extends Node2D
 @export var lvlCap = PackedScene
 @onready var fx_ui = $FX_UI # Nodo de sonido para clics
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
+@onready var music = $Music
 
+func _ready():
+	var music_path = "res://04_audio/02_music/Music_Quiz.mp3"
+	if ResourceLoader.exists(music_path):
+		var stream = load(music_path)
+		music.stream = stream
+		music.play()
+	else:
+		print("⚠ No se encontró la música:", music_path)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
