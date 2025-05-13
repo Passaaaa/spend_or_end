@@ -42,7 +42,6 @@ process_mode = 3
 script = ExtResource("1_77v5r")
 
 [node name="Background" type="ColorRect" parent="."]
-visible = false
 offset_right = 1280.0
 offset_bottom = 720.0
 color = Color(0.143272, 0.1357, 0.59, 1)
@@ -469,6 +468,7 @@ vertical_alignment = 1
 autowrap_mode = 3
 
 [node name="OpcionesPanelPausa" type="Panel" parent="."]
+visible = false
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -477,6 +477,7 @@ grow_vertical = 2
 
 [node name="Background" type="ColorRect" parent="OpcionesPanelPausa"]
 modulate = Color(0.709804, 0.709804, 0.709804, 1)
+layout_mode = 0
 offset_right = 1280.0
 offset_bottom = 720.0
 color = Color(0.143272, 0.1357, 0.59, 1)

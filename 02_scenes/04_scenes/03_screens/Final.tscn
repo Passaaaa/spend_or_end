@@ -11,11 +11,13 @@ offset_right = 1280.0
 offset_bottom = 721.0
 
 [node name="TextureRect" type="TextureRect" parent="ColorRect"]
+layout_mode = 0
 offset_right = 1280.0
 offset_bottom = 721.0
 texture = ExtResource("1_gn7cv")
 
 [node name="Label" type="Label" parent="ColorRect"]
+layout_mode = 0
 offset_left = 701.0
 offset_top = 56.0
 offset_right = 1226.0

@@ -23,7 +23,7 @@ var jetpack_timer = 0.0
 var has_died = false
 
 
-
+@onready var pause_Controller = $Node
 @onready var sfx = $SFX
 @onready var player_sprite = $PlayerSprite
 @onready var jetpack_sprite = $JetpackSprite
@@ -35,7 +35,7 @@ func _ready():
 	jetpack_sprite.visible = false
 	player_sprite.visible = true
 	dead_sprite.visible = false
-	
+	pause_Controller.process_mode = Node.PROCESS_MODE_ALWAYS
 	
 
 
@@ -129,6 +129,9 @@ func die():
 		death_screen.show_screen()
 	else:
 		print("No se encontró DeathScreen en la escena")
+	
+	
+	pause_Controller.process_mode = Node.PROCESS_MODE_DISABLED
 
 func play_sound(path: String):
 	print("Reproduciendo en nodo:", sfx.get_path())  # TEMPORAL DEBUG
