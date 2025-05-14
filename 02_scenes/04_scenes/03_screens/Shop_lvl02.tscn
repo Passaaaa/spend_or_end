@@ -1,11 +1,19 @@
-[gd_scene load_steps=15 format=3 uid="uid://dvr465htlmxh8"]
+[gd_scene load_steps=23 format=3 uid="uid://dvr465htlmxh8"]
 
 [ext_resource type="Script" path="res://02_scenes/04_scenes/03_screens/Shop.gd" id="1_54445"]
 [ext_resource type="Texture2D" uid="uid://tfmio1tywvt6" path="res://01_assets/01_sprites/03_UI/Shop/ShopBackground.png" id="2_3cnqb"]
 [ext_resource type="PackedScene" uid="uid://qhgwqnod3oyo" path="res://02_scenes/03_levels/03_level03/level_3NoCap.tscn" id="2_j0fl7"]
 [ext_resource type="FontFile" uid="uid://0c8blrst4tvx" path="res://01_assets/02_fonts/typo_comica/Typo_Comica_demo.otf" id="3_g40s6"]
 [ext_resource type="PackedScene" uid="uid://dwvdt22ghsobb" path="res://02_scenes/03_levels/03_level03/level_3Cap.tscn" id="3_q78ib"]
+[ext_resource type="LabelSettings" uid="uid://d31e2v2ph2qrc" path="res://03_scripts/03_UI/TextLabelSettings.tres" id="6_fkel3"]
 [ext_resource type="AudioStream" uid="uid://brvedfjdywhiv" path="res://04_audio/01_SFX/fx_decision.mp3" id="6_gfbwp"]
+[ext_resource type="Texture2D" uid="uid://wsxcimc7n118" path="res://01_assets/01_sprites/03_UI/Noticias.png" id="8_uk2a4"]
+[ext_resource type="Texture2D" uid="uid://dlwip8214ukye" path="res://01_assets/01_sprites/03_UI/Buttons/Normal.png" id="9_584qe"]
+[ext_resource type="Texture2D" uid="uid://b0fdp0dlgajaa" path="res://01_assets/01_sprites/03_UI/Buttons/Pressed.png" id="10_7x3do"]
+[ext_resource type="Texture2D" uid="uid://b7gcup3qgw0ti" path="res://01_assets/01_sprites/03_UI/Buttons/Hovered.png" id="11_movj3"]
+[ext_resource type="LabelSettings" uid="uid://bhjg7yugc5g58" path="res://03_scripts/03_UI/ButtonLabelSettings.tres" id="12_xas11"]
+[ext_resource type="LabelSettings" uid="uid://c8p62mn0whhy" path="res://02_scenes/04_scenes/03_screens/periodicoLabelSettings.tres" id="13_kyqit"]
+[ext_resource type="PackedScene" uid="uid://3gfrdeoxbi0a" path="res://02_scenes/02_items/counterController.tscn" id="14_ery57"]
 
 [sub_resource type="Theme" id="Theme_6o8l8"]
 
@@ -38,14 +46,15 @@ script = ExtResource("1_54445")
 lvlNoCap = ExtResource("2_j0fl7")
 lvlCap = ExtResource("3_q78ib")
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="Tienda" type="TextureRect" parent="."]
 modulate = Color(0.788235, 0.788235, 0.788235, 1)
 offset_right = 1280.0
 offset_bottom = 720.0
 texture = ExtResource("2_3cnqb")
 expand_mode = 1
 
-[node name="Boton_capitalista" type="Button" parent="."]
+[node name="Boton_capitalista" type="Button" parent="Tienda"]
+layout_mode = 0
 offset_left = 42.0
 offset_top = 446.0
 offset_right = 598.0
@@ -61,19 +70,23 @@ alignment = 0
 clip_text = true
 text_direction = 1
 
-[node name="Label" type="Label" parent="Boton_capitalista"]
+[node name="Label" type="Label" parent="Tienda/Boton_capitalista"]
 layout_mode = 0
-offset_right = 553.0
-offset_bottom = 240.0
+offset_left = 11.0
+offset_top = 10.0
+offset_right = 540.0
+offset_bottom = 245.0
 theme_override_fonts/font = ExtResource("3_g40s6")
 theme_override_font_sizes/font_size = 24
-text = "Viva el dinero que os jodan a todos putos rojos pobres MUAJAJAJAJAJJAJAJAAJJA"
+text = "\"People are complaining about rent prices? Well, the most obvious and reasonable solution is... to build more! And if you can’t afford it, just move somewhere more... modest.\""
+label_settings = ExtResource("6_fkel3")
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
 clip_text = true
 
-[node name="Boton_noCapitalista" type="Button" parent="."]
+[node name="Boton_noCapitalista" type="Button" parent="Tienda"]
+layout_mode = 0
 offset_left = 680.0
 offset_top = 446.0
 offset_right = 1236.0
@@ -84,15 +97,16 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_77m1o")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_jg38s")
 theme_override_styles/focus = SubResource("StyleBoxFlat_ymvhr")
 
-[node name="Label" type="Label" parent="Boton_noCapitalista"]
+[node name="Label" type="Label" parent="Tienda/Boton_noCapitalista"]
 layout_mode = 0
-offset_left = 1.0
-offset_top = 1.0
-offset_right = 554.0
-offset_bottom = 241.0
+offset_left = 15.0
+offset_top = 6.0
+offset_right = 547.0
+offset_bottom = 246.0
 theme_override_fonts/font = ExtResource("3_g40s6")
 theme_override_font_sizes/font_size = 24
-text = "De chill hermano, lo mío es tuyo y lo tuyo es mío, paz bro"
+text = "\"Ugh, rents again. People are squatting—bad optics. Let’s build a couple public housing blocks, and maybe landlords lower prices... before someone asks why they’re always 'abroad'.\""
+label_settings = ExtResource("6_fkel3")
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
@@ -100,10 +114,73 @@ clip_text = true
 
 [node name="FX_UI" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_gfbwp")
+volume_db = -5.0
 bus = &"Sfx"
 
 [node name="Music" type="AudioStreamPlayer" parent="."]
 volume_db = -10.0
 
-[connection signal="pressed" from="Boton_capitalista" to="." method="_on_boton_capitalista_pressed"]
-[connection signal="pressed" from="Boton_noCapitalista" to="." method="_on_boton_no_capitalista_pressed"]
+[node name="Periodico" type="TextureRect" parent="."]
+offset_right = 1280.0
+offset_bottom = 720.0
+texture = ExtResource("8_uk2a4")
+
+[node name="Button_next" type="TextureButton" parent="Periodico"]
+layout_mode = 0
+offset_left = 956.0
+offset_top = 572.0
+offset_right = 1306.0
+offset_bottom = 697.0
+scale = Vector2(0.7, 0.7)
+texture_normal = ExtResource("9_584qe")
+texture_pressed = ExtResource("10_7x3do")
+texture_hover = ExtResource("11_movj3")
+stretch_mode = 3
+
+[node name="Label" type="Label" parent="Periodico/Button_next"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.098
+anchor_top = 0.168
+anchor_right = 0.898
+anchor_bottom = 0.824
+offset_left = -0.0143394
+offset_top = -1.00002
+offset_right = -0.0143433
+offset_bottom = -1.52588e-05
+text = "NEXT"
+label_settings = ExtResource("12_xas11")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Capitalista" type="Label" parent="Periodico"]
+visible = false
+layout_mode = 0
+offset_left = 433.0
+offset_top = 349.0
+offset_right = 772.0
+offset_bottom = 569.0
+text = "\"The number of homeless has skyrocketed, and squatting has hit unprecedent levels. Also... HEY, WHAT ARE YOU DOING? GET OUT OF MY OFFICE!\""
+label_settings = ExtResource("13_kyqit")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="NoCapitalista" type="Label" parent="Periodico"]
+visible = false
+layout_mode = 0
+offset_left = 433.0
+offset_top = 349.0
+offset_right = 772.0
+offset_bottom = 569.0
+text = "\"Self-Harvest Caliphate has reduced the number of homeless by 888%. For some reason, there’s also been a surge in mass flights abroad.\""
+label_settings = ExtResource("13_kyqit")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Node" parent="." instance=ExtResource("14_ery57")]
+
+[connection signal="pressed" from="Tienda/Boton_capitalista" to="." method="_on_boton_capitalista_pressed"]
+[connection signal="pressed" from="Tienda/Boton_noCapitalista" to="." method="_on_boton_no_capitalista_pressed"]
+[connection signal="pressed" from="Periodico/Button_next" to="." method="_on_button_next_pressed"]

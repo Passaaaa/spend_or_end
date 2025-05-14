@@ -1,7 +1,39 @@
-[gd_scene load_steps=6 format=3 uid="uid://x28uvyfxsc43"]
+[gd_scene load_steps=13 format=3 uid="uid://x28uvyfxsc43"]
 
 [ext_resource type="Script" path="res://03_scripts/02_levels/01_enemies/Goomba.gd" id="1_5rss3"]
 [ext_resource type="Texture2D" uid="uid://sl44ptx7hqva" path="res://01_assets/01_sprites/01_characters/gommba.png" id="2_rxvau"]
+[ext_resource type="Texture2D" uid="uid://d0ms65g8tgwv4" path="res://01_assets/01_sprites/01_characters/Tramp01.png" id="3_thba8"]
+[ext_resource type="Texture2D" uid="uid://csaf5mb5p0al2" path="res://01_assets/01_sprites/01_characters/Tramp02.png" id="4_2k7sr"]
+[ext_resource type="Texture2D" uid="uid://cmjnpar8ttbxt" path="res://01_assets/01_sprites/01_characters/Tramp03.png" id="5_fe1ju"]
+[ext_resource type="Texture2D" uid="uid://dm56og3obovt8" path="res://01_assets/01_sprites/01_characters/Tramp04.png" id="6_u56pv"]
+[ext_resource type="Texture2D" uid="uid://b2ojpbu1rfsfc" path="res://01_assets/01_sprites/01_characters/Tramp05.png" id="7_xsaak"]
+[ext_resource type="Texture2D" uid="uid://be8eokklec3te" path="res://01_assets/01_sprites/01_characters/Tramp06.png" id="8_m7ela"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6oatu"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_thba8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_2k7sr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_fe1ju")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_u56pv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_xsaak")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_m7ela")
+}],
+"loop": true,
+"name": &"default",
+"speed": 6.0
+}]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_c0pr0"]
 radius = 18.7391
@@ -16,7 +48,14 @@ height = 32.2744
 [node name="Goomba" type="CharacterBody2D"]
 script = ExtResource("1_5rss3")
 
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(1, -105)
+scale = Vector2(0.335, 0.335)
+sprite_frames = SubResource("SpriteFrames_6oatu")
+autoplay = "default"
+
 [node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
 scale = Vector2(0.1, 0.1)
 texture = ExtResource("2_rxvau")
 

@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://3gfrdeoxbi0a"]
+
+[ext_resource type="Script" path="res://03_scripts/04_utils/counterController.gd" id="1_jwgd6"]
+
+[node name="Node" type="Node"]
+script = ExtResource("1_jwgd6")

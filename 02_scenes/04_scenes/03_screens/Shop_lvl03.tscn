@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://ebn7oa0yrdg8"]
+[gd_scene load_steps=23 format=3 uid="uid://ebn7oa0yrdg8"]
 
 [ext_resource type="Script" path="res://02_scenes/04_scenes/03_screens/Shop.gd" id="1_tc2a8"]
 [ext_resource type="Texture2D" uid="uid://tfmio1tywvt6" path="res://01_assets/01_sprites/03_UI/Shop/ShopBackground.png" id="2_rukt8"]
@@ -6,6 +6,14 @@
 [ext_resource type="FontFile" uid="uid://0c8blrst4tvx" path="res://01_assets/02_fonts/typo_comica/Typo_Comica_demo.otf" id="3_sx5a8"]
 [ext_resource type="PackedScene" uid="uid://hp3ntobp07di" path="res://02_scenes/03_levels/04_level04/level_4Cap.tscn" id="3_tbfpa"]
 [ext_resource type="AudioStream" uid="uid://brvedfjdywhiv" path="res://04_audio/01_SFX/fx_decision.mp3" id="6_bcu7b"]
+[ext_resource type="LabelSettings" uid="uid://d31e2v2ph2qrc" path="res://03_scripts/03_UI/TextLabelSettings.tres" id="6_x6yy0"]
+[ext_resource type="Texture2D" uid="uid://wsxcimc7n118" path="res://01_assets/01_sprites/03_UI/Noticias.png" id="8_6mdp3"]
+[ext_resource type="Texture2D" uid="uid://dlwip8214ukye" path="res://01_assets/01_sprites/03_UI/Buttons/Normal.png" id="9_8tan2"]
+[ext_resource type="Texture2D" uid="uid://b0fdp0dlgajaa" path="res://01_assets/01_sprites/03_UI/Buttons/Pressed.png" id="10_j8y8n"]
+[ext_resource type="Texture2D" uid="uid://b7gcup3qgw0ti" path="res://01_assets/01_sprites/03_UI/Buttons/Hovered.png" id="11_atoo5"]
+[ext_resource type="LabelSettings" uid="uid://bhjg7yugc5g58" path="res://03_scripts/03_UI/ButtonLabelSettings.tres" id="12_7pe77"]
+[ext_resource type="LabelSettings" uid="uid://c8p62mn0whhy" path="res://02_scenes/04_scenes/03_screens/periodicoLabelSettings.tres" id="13_ouxqv"]
+[ext_resource type="PackedScene" uid="uid://3gfrdeoxbi0a" path="res://02_scenes/02_items/counterController.tscn" id="14_sfhel"]
 
 [sub_resource type="Theme" id="Theme_6o8l8"]
 
@@ -38,14 +46,15 @@ script = ExtResource("1_tc2a8")
 lvlNoCap = ExtResource("2_yetp3")
 lvlCap = ExtResource("3_tbfpa")
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="Tienda" type="TextureRect" parent="."]
 modulate = Color(0.788235, 0.788235, 0.788235, 1)
 offset_right = 1280.0
 offset_bottom = 720.0
 texture = ExtResource("2_rukt8")
 expand_mode = 1
 
-[node name="Boton_capitalista" type="Button" parent="."]
+[node name="Boton_capitalista" type="Button" parent="Tienda"]
+layout_mode = 0
 offset_left = 42.0
 offset_top = 446.0
 offset_right = 598.0
@@ -61,19 +70,23 @@ alignment = 0
 clip_text = true
 text_direction = 1
 
-[node name="Label" type="Label" parent="Boton_capitalista"]
+[node name="Label" type="Label" parent="Tienda/Boton_capitalista"]
 layout_mode = 0
-offset_right = 553.0
-offset_bottom = 240.0
+offset_left = 28.0
+offset_top = 3.0
+offset_right = 533.0
+offset_bottom = 243.0
 theme_override_fonts/font = ExtResource("3_sx5a8")
 theme_override_font_sizes/font_size = 24
-text = "Viva el dinero que os jodan a todos putos rojos pobres MUAJAJAJAJAJJAJAJAAJJA"
+text = "A filthy-rich company wants to drill for oil here. Wait—how much are they paying?! Eh, if it’s just outside the city, can’t be that bad. Plus, we need funds for some very official, very secret stuff.\""
+label_settings = ExtResource("6_x6yy0")
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
 clip_text = true
 
-[node name="Boton_noCapitalista" type="Button" parent="."]
+[node name="Boton_noCapitalista" type="Button" parent="Tienda"]
+layout_mode = 0
 offset_left = 680.0
 offset_top = 446.0
 offset_right = 1236.0
@@ -84,15 +97,16 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_77m1o")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_jg38s")
 theme_override_styles/focus = SubResource("StyleBoxFlat_ymvhr")
 
-[node name="Label" type="Label" parent="Boton_noCapitalista"]
+[node name="Label" type="Label" parent="Tienda/Boton_noCapitalista"]
 layout_mode = 0
-offset_left = 1.0
+offset_left = 15.0
 offset_top = 1.0
-offset_right = 554.0
+offset_right = 547.0
 offset_bottom = 241.0
 theme_override_fonts/font = ExtResource("3_sx5a8")
 theme_override_font_sizes/font_size = 24
-text = "De chill hermano, lo mío es tuyo y lo tuyo es mío, paz bro"
+text = "\"All that talk about color-coded bins, and people still dump everything in the river. That’s it—I'm covering this whole field with solar panels. And those rich kids can stop digging holes everywhere.\""
+label_settings = ExtResource("6_x6yy0")
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
@@ -100,10 +114,72 @@ clip_text = true
 
 [node name="FX_UI" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_bcu7b")
+volume_db = -5.0
 bus = &"Sfx"
 
 [node name="Music" type="AudioStreamPlayer" parent="."]
 volume_db = -10.0
 
-[connection signal="pressed" from="Boton_capitalista" to="." method="_on_boton_capitalista_pressed"]
-[connection signal="pressed" from="Boton_noCapitalista" to="." method="_on_boton_no_capitalista_pressed"]
+[node name="Periodico" type="TextureRect" parent="."]
+offset_right = 1280.0
+offset_bottom = 720.0
+texture = ExtResource("8_6mdp3")
+
+[node name="Button_next" type="TextureButton" parent="Periodico"]
+layout_mode = 0
+offset_left = 956.0
+offset_top = 572.0
+offset_right = 1306.0
+offset_bottom = 697.0
+scale = Vector2(0.7, 0.7)
+texture_normal = ExtResource("9_8tan2")
+texture_pressed = ExtResource("10_j8y8n")
+texture_hover = ExtResource("11_atoo5")
+stretch_mode = 3
+
+[node name="Label" type="Label" parent="Periodico/Button_next"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.098
+anchor_top = 0.168
+anchor_right = 0.898
+anchor_bottom = 0.824
+offset_left = -0.0143394
+offset_top = -1.00002
+offset_right = -0.0143433
+offset_bottom = -1.52588e-05
+text = "NEXT"
+label_settings = ExtResource("12_7pe77")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Capitalista" type="Label" parent="Periodico"]
+visible = false
+layout_mode = 0
+offset_left = 433.0
+offset_top = 349.0
+offset_right = 772.0
+offset_bottom = 569.0
+text = "\"CO2 levels are rising, potatoes are cutting their life expectancy by 170% and are wilting before turning 25. Hold on, I’m 25… FU-\""
+label_settings = ExtResource("13_ouxqv")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="NoCapitalista" type="Label" parent="Periodico"]
+layout_mode = 0
+offset_left = 433.0
+offset_top = 349.0
+offset_right = 772.0
+offset_bottom = 569.0
+text = "\"Self-Harvest Caliphate reaches 100% clean energy. The air is now so clean that citizens discovered an entire neighboring country they’d been ignoring for decades.\""
+label_settings = ExtResource("13_ouxqv")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Node" parent="." instance=ExtResource("14_sfhel")]
+
+[connection signal="pressed" from="Tienda/Boton_capitalista" to="." method="_on_boton_capitalista_pressed"]
+[connection signal="pressed" from="Tienda/Boton_noCapitalista" to="." method="_on_boton_no_capitalista_pressed"]
+[connection signal="pressed" from="Periodico/Button_next" to="." method="_on_button_next_pressed"]

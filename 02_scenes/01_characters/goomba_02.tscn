@@ -1,8 +1,40 @@
-[gd_scene load_steps=7 format=3 uid="uid://dneqnrtwf1ecm"]
+[gd_scene load_steps=14 format=3 uid="uid://dneqnrtwf1ecm"]
 
 [ext_resource type="Script" path="res://03_scripts/02_levels/01_enemies/Goomba.gd" id="1_etg83"]
 [ext_resource type="Texture2D" uid="uid://sl44ptx7hqva" path="res://01_assets/01_sprites/01_characters/gommba.png" id="2_3iwo8"]
 [ext_resource type="PackedScene" uid="uid://d3xlshy53rjlm" path="res://02_scenes/02_items/pinchos.tscn" id="3_w1qjc"]
+[ext_resource type="Texture2D" uid="uid://d0ms65g8tgwv4" path="res://01_assets/01_sprites/01_characters/Tramp01.png" id="3_yt6ac"]
+[ext_resource type="Texture2D" uid="uid://csaf5mb5p0al2" path="res://01_assets/01_sprites/01_characters/Tramp02.png" id="4_6r00g"]
+[ext_resource type="Texture2D" uid="uid://cmjnpar8ttbxt" path="res://01_assets/01_sprites/01_characters/Tramp03.png" id="5_7mbie"]
+[ext_resource type="Texture2D" uid="uid://dm56og3obovt8" path="res://01_assets/01_sprites/01_characters/Tramp04.png" id="6_agvti"]
+[ext_resource type="Texture2D" uid="uid://b2ojpbu1rfsfc" path="res://01_assets/01_sprites/01_characters/Tramp05.png" id="7_xol8c"]
+[ext_resource type="Texture2D" uid="uid://be8eokklec3te" path="res://01_assets/01_sprites/01_characters/Tramp06.png" id="8_pwcw5"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_oeygu"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_yt6ac")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_6r00g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_7mbie")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_agvti")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_xol8c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_pwcw5")
+}],
+"loop": true,
+"name": &"default",
+"speed": 6.0
+}]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_c0pr0"]
 radius = 18.7391
@@ -18,9 +50,16 @@ height = 32.2744
 script = ExtResource("1_etg83")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(0, 7)
 scale = Vector2(0.1, 0.08)
 texture = ExtResource("2_3iwo8")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(1, -105)
+scale = Vector2(0.335, 0.335)
+sprite_frames = SubResource("SpriteFrames_oeygu")
+autoplay = "default"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 20.6362)

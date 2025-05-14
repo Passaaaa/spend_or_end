@@ -1,17 +1,19 @@
-[gd_scene load_steps=16 format=3 uid="uid://hp3ntobp07di"]
+[gd_scene load_steps=18 format=3 uid="uid://hp3ntobp07di"]
 
 [ext_resource type="Script" path="res://02_scenes/03_levels/04_level04/level_4.gd" id="1_m5ipa"]
+[ext_resource type="Texture2D" uid="uid://cx6rufo0gw3xn" path="res://01_assets/01_sprites/02_environments/Contaminacion.png" id="2_xvn33"]
 [ext_resource type="Texture2D" uid="uid://5m2lscdegx7g" path="res://01_assets/01_sprites/02_environments/Ciudad.png" id="3_txv1g"]
 [ext_resource type="AudioStream" uid="uid://do5ciwcplgqf5" path="res://04_audio/01_SFX/fx_seleccionar.mp3" id="4_jyv3k"]
 [ext_resource type="PackedScene" uid="uid://crobhgicb8ade" path="res://02_scenes/03_levels/04_level04/tile_map_LVL4.tscn" id="4_v8np8"]
 [ext_resource type="PackedScene" uid="uid://dae2rl4asaybh" path="res://02_scenes/04_scenes/02_Death/DeathScreen.tscn" id="4_ybmdv"]
 [ext_resource type="AudioStream" uid="uid://dbhsq7e8jf7ti" path="res://04_audio/01_SFX/fx_gameover.mp3" id="5_02pbe"]
 [ext_resource type="PackedScene" uid="uid://d3xlshy53rjlm" path="res://02_scenes/02_items/pinchos.tscn" id="7_32v0q"]
-[ext_resource type="PackedScene" uid="uid://c11a4hfi1ko2u" path="res://02_scenes/01_characters/Player.tscn" id="8_y4fww"]
+[ext_resource type="PackedScene" uid="uid://c11a4hfi1ko2u" path="res://02_scenes/01_characters/player.tscn" id="8_y4fww"]
 [ext_resource type="Script" path="res://02_scenes/04_scenes/03_screens/shopCollision.gd" id="9_km6ph"]
 [ext_resource type="PackedScene" uid="uid://dneqnrtwf1ecm" path="res://02_scenes/01_characters/goomba_02.tscn" id="9_r6u3a"]
 [ext_resource type="PackedScene" uid="uid://x28uvyfxsc43" path="res://02_scenes/01_characters/goomba.tscn" id="9_xynlf"]
 [ext_resource type="PackedScene" uid="uid://bmk7aqnd6a7v" path="res://02_scenes/02_items/jetpack.tscn" id="11_5n3p7"]
+[ext_resource type="PackedScene" uid="uid://b2kbljfdvoj8p" path="res://02_scenes/04_scenes/03_screens/Final.tscn" id="11_mcbbk"]
 [ext_resource type="PackedScene" uid="uid://cfau8t3wl2kki" path="res://02_scenes/02_items/muerte.tscn" id="12_m4jkg"]
 [ext_resource type="AudioStream" uid="uid://dis5ns28wj6jw" path="res://04_audio/02_music/Music_Lvl03.mp3" id="12_mic88"]
 
@@ -20,7 +22,7 @@ size = Vector2(607, 217)
 
 [node name="Level4" type="Node2D"]
 script = ExtResource("1_m5ipa")
-textura = ExtResource("3_txv1g")
+textura = ExtResource("2_xvn33")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 modulate = Color(0.7, 0.7, 0.7, 1)
@@ -236,7 +238,7 @@ limit_bottom = 720
 [node name="Area2D" type="Area2D" parent="."]
 position = Vector2(22811, 513)
 script = ExtResource("9_km6ph")
-tienda = ExtResource("4_ybmdv")
+tienda = ExtResource("11_mcbbk")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(1442, 28)

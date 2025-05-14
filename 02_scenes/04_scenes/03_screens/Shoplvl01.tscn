@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://drnnvxc3vs00j"]
+[gd_scene load_steps=23 format=3 uid="uid://drnnvxc3vs00j"]
 
 [ext_resource type="Script" path="res://02_scenes/04_scenes/03_screens/Shop.gd" id="1_8acl1"]
 [ext_resource type="Texture2D" uid="uid://tfmio1tywvt6" path="res://01_assets/01_sprites/03_UI/Shop/ShopBackground.png" id="2_0urwk"]
@@ -6,7 +6,14 @@
 [ext_resource type="PackedScene" uid="uid://c2bkaxwa6e2x4" path="res://02_scenes/03_levels/02_level02/level_2Cap.tscn" id="3_3ofjf"]
 [ext_resource type="FontFile" uid="uid://0c8blrst4tvx" path="res://01_assets/02_fonts/typo_comica/Typo_Comica_demo.otf" id="3_4eo16"]
 [ext_resource type="AudioStream" uid="uid://brvedfjdywhiv" path="res://04_audio/01_SFX/fx_decision.mp3" id="6_rrige"]
+[ext_resource type="LabelSettings" uid="uid://d31e2v2ph2qrc" path="res://03_scripts/03_UI/TextLabelSettings.tres" id="6_txntx"]
 [ext_resource type="AudioStream" uid="uid://k40efpai30fu" path="res://04_audio/02_music/Music_Quiz.mp3" id="7_i4210"]
+[ext_resource type="Texture2D" uid="uid://wsxcimc7n118" path="res://01_assets/01_sprites/03_UI/Noticias.png" id="9_evpte"]
+[ext_resource type="Texture2D" uid="uid://dlwip8214ukye" path="res://01_assets/01_sprites/03_UI/Buttons/Normal.png" id="10_tjpr6"]
+[ext_resource type="Texture2D" uid="uid://b0fdp0dlgajaa" path="res://01_assets/01_sprites/03_UI/Buttons/Pressed.png" id="11_epqq6"]
+[ext_resource type="Texture2D" uid="uid://b7gcup3qgw0ti" path="res://01_assets/01_sprites/03_UI/Buttons/Hovered.png" id="12_mf315"]
+[ext_resource type="LabelSettings" uid="uid://bhjg7yugc5g58" path="res://03_scripts/03_UI/ButtonLabelSettings.tres" id="13_ucsgm"]
+[ext_resource type="LabelSettings" uid="uid://c8p62mn0whhy" path="res://02_scenes/04_scenes/03_screens/periodicoLabelSettings.tres" id="14_c4plq"]
 
 [sub_resource type="Theme" id="Theme_6o8l8"]
 
@@ -39,14 +46,16 @@ script = ExtResource("1_8acl1")
 lvlNoCap = ExtResource("2_uj4bh")
 lvlCap = ExtResource("3_3ofjf")
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="Tienda" type="TextureRect" parent="."]
+visible = false
 modulate = Color(0.788235, 0.788235, 0.788235, 1)
 offset_right = 1280.0
 offset_bottom = 720.0
 texture = ExtResource("2_0urwk")
 expand_mode = 1
 
-[node name="Boton_capitalista" type="Button" parent="."]
+[node name="Boton_capitalista" type="Button" parent="Tienda"]
+layout_mode = 0
 offset_left = 42.0
 offset_top = 446.0
 offset_right = 598.0
@@ -62,19 +71,22 @@ alignment = 0
 clip_text = true
 text_direction = 1
 
-[node name="Label" type="Label" parent="Boton_capitalista"]
+[node name="Label" type="Label" parent="Tienda/Boton_capitalista"]
 layout_mode = 0
-offset_right = 553.0
-offset_bottom = 240.0
-theme_override_fonts/font = ExtResource("3_4eo16")
+offset_left = 2.0
+offset_right = 556.0
+offset_bottom = 246.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 24
-text = "Viva el dinero que os jodan a todos putos rojos pobres MUAJAJAJAJAJJAJAJAAJJA"
+text = "\"There are too many kids and not enough schools, and building more just isn’t in our super tight budget. We should privatize education—problem solved (and we might even fund our re-election campaign while we’re at it).\""
+label_settings = ExtResource("6_txntx")
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
 clip_text = true
 
-[node name="Boton_noCapitalista" type="Button" parent="."]
+[node name="Boton_noCapitalista" type="Button" parent="Tienda"]
+layout_mode = 0
 offset_left = 680.0
 offset_top = 446.0
 offset_right = 1236.0
@@ -85,15 +97,17 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_77m1o")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_jg38s")
 theme_override_styles/focus = SubResource("StyleBoxFlat_ymvhr")
 
-[node name="Label" type="Label" parent="Boton_noCapitalista"]
+[node name="Label" type="Label" parent="Tienda/Boton_noCapitalista"]
 layout_mode = 0
 offset_left = 1.0
 offset_top = 1.0
-offset_right = 554.0
+offset_right = 555.0
 offset_bottom = 241.0
 theme_override_fonts/font = ExtResource("3_4eo16")
 theme_override_font_sizes/font_size = 24
-text = "De chill hermano, lo mío es tuyo y lo tuyo es mío, paz bro"
+text = "    \"Teachers are complaining about the lack of space in schools. Best solution? Stop funding those ‘private meetings’ between council members and their secretaries. Let’s build more public schools instead!\"
+"
+label_settings = ExtResource("6_txntx")
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
@@ -107,5 +121,64 @@ bus = &"Sfx"
 stream = ExtResource("7_i4210")
 volume_db = -10.0
 
-[connection signal="pressed" from="Boton_capitalista" to="." method="_on_boton_capitalista_pressed"]
-[connection signal="pressed" from="Boton_noCapitalista" to="." method="_on_boton_no_capitalista_pressed"]
+[node name="Periodico" type="TextureRect" parent="."]
+offset_right = 1280.0
+offset_bottom = 720.0
+texture = ExtResource("9_evpte")
+
+[node name="Button_next" type="TextureButton" parent="Periodico"]
+layout_mode = 0
+offset_left = 956.0
+offset_top = 572.0
+offset_right = 1306.0
+offset_bottom = 697.0
+scale = Vector2(0.7, 0.7)
+texture_normal = ExtResource("10_tjpr6")
+texture_pressed = ExtResource("11_epqq6")
+texture_hover = ExtResource("12_mf315")
+stretch_mode = 3
+
+[node name="Label" type="Label" parent="Periodico/Button_next"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.098
+anchor_top = 0.168
+anchor_right = 0.898
+anchor_bottom = 0.824
+offset_left = -0.0143394
+offset_top = -1.00002
+offset_right = -0.0143433
+offset_bottom = -1.52588e-05
+text = "NEXT"
+label_settings = ExtResource("13_ucsgm")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Capitalista" type="Label" parent="Periodico"]
+layout_mode = 0
+offset_left = 433.0
+offset_top = 349.0
+offset_right = 772.0
+offset_bottom = 569.0
+text = "\"ILLITRACY up 200%, STRITS	 crumbling, no one can REED the EMERLLENCY signs. At this rate, no one will even UNDERESTAN this text.\""
+label_settings = ExtResource("14_c4plq")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="NoCapitalista" type="Label" parent="Periodico"]
+visible = false
+layout_mode = 0
+offset_left = 433.0
+offset_top = 349.0
+offset_right = 772.0
+offset_bottom = 569.0
+text = "\"Studying is worth it! Now the Self-Harvest Caliphate is leading the world in tech, science, and self-righteous speeches.\""
+label_settings = ExtResource("14_c4plq")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[connection signal="pressed" from="Tienda/Boton_capitalista" to="." method="_on_boton_capitalista_pressed"]
+[connection signal="pressed" from="Tienda/Boton_noCapitalista" to="." method="_on_boton_no_capitalista_pressed"]
+[connection signal="pressed" from="Periodico/Button_next" to="." method="_on_button_next_pressed"]
