@@ -88,6 +88,33 @@ offset_bottom = 720.0
 texture = ExtResource("6_r320i")
 expand_mode = 1
 
+[node name="Button_creditos" type="TextureButton" parent="Background"]
+layout_mode = 2
+offset_left = 881.5
+offset_top = 609.3
+offset_right = 1491.5
+offset_bottom = 734.3
+scale = Vector2(0.7, 0.7)
+toggle_mode = true
+texture_normal = ExtResource("8_rsdn2")
+texture_pressed = ExtResource("9_8y1c4")
+texture_hover = ExtResource("10_oru7d")
+stretch_mode = 3
+
+[node name="Label" type="Label" parent="Background/Button_creditos"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.249
+anchor_top = 0.168
+anchor_right = 0.741
+anchor_bottom = 0.832
+offset_left = 0.109985
+offset_right = 5.98996
+text = "CREDITS"
+label_settings = ExtResource("11_njyvy")
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="VBoxContainer" type="VBoxContainer" parent="Background"]
 clip_contents = true
 layout_mode = 0
@@ -606,6 +633,7 @@ autoplay = true
 stream = ExtResource("18_huh6v")
 bus = &"Sfx"
 
+[connection signal="pressed" from="Background/Button_creditos" to="." method="_on_button_creditos_pressed"]
 [connection signal="pressed" from="Background/VBoxContainer/Button_empezar" to="." method="_on_button_empezar_pressed"]
 [connection signal="pressed" from="Background/VBoxContainer/Button_opciones" to="." method="_on_button_opciones_pressed"]
 [connection signal="pressed" from="Background/VBoxContainer/Button_salir" to="." method="_on_button_salir_pressed"]

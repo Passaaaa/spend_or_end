@@ -100,3 +100,7 @@ func _exit_tree():
 	config.save("user://settings.cfg")
 
 
+
+
+func _on_button_creditos_pressed():
+	get_tree().change_scene_to_file("res://02_scenes/04_scenes/03_screens/Creditos.tscn")

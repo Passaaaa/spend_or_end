@@ -1,0 +1,151 @@
+[gd_scene load_steps=15 format=3 uid="uid://d3kd1giep4s8d"]
+
+[ext_resource type="Texture2D" uid="uid://cs5lkr2wk0jtv" path="res://01_assets/01_sprites/03_UI/BackGif01.png" id="1_6llre"]
+[ext_resource type="Script" path="res://02_scenes/04_scenes/03_screens/Creditos.gd" id="1_jbth2"]
+[ext_resource type="Texture2D" uid="uid://cf5jrht86htey" path="res://01_assets/01_sprites/03_UI/BackGif02.png" id="2_n7hit"]
+[ext_resource type="Texture2D" uid="uid://08e0uhrwx56q" path="res://01_assets/01_sprites/03_UI/BackGif03.png" id="3_87rmv"]
+[ext_resource type="Texture2D" uid="uid://cspnj51jwyur3" path="res://01_assets/01_sprites/03_UI/Title.png" id="4_jmn7x"]
+[ext_resource type="FontFile" uid="uid://0c8blrst4tvx" path="res://01_assets/02_fonts/typo_comica/Typo_Comica_demo.otf" id="4_rdkjv"]
+[ext_resource type="Texture2D" uid="uid://dlwip8214ukye" path="res://01_assets/01_sprites/03_UI/Buttons/Normal.png" id="5_vhm71"]
+[ext_resource type="Texture2D" uid="uid://b0fdp0dlgajaa" path="res://01_assets/01_sprites/03_UI/Buttons/Pressed.png" id="6_r2op5"]
+[ext_resource type="Texture2D" uid="uid://b7gcup3qgw0ti" path="res://01_assets/01_sprites/03_UI/Buttons/Hovered.png" id="7_tm150"]
+[ext_resource type="LabelSettings" uid="uid://bhjg7yugc5g58" path="res://03_scripts/03_UI/ButtonLabelSettings.tres" id="8_5nmg2"]
+[ext_resource type="Texture2D" uid="uid://bf4i40cyn4aps" path="res://01_assets/01_sprites/03_UI/Buttons/SliderBackground.png" id="10_4fyio"]
+[ext_resource type="Texture2D" uid="uid://b60ia6e3xlt2j" path="res://01_assets/01_sprites/03_UI/INFE.png" id="11_odu3m"]
+[ext_resource type="Texture2D" uid="uid://cotncpjqik56c" path="res://01_assets/01_sprites/03_UI/PedroAsecasPresidente.png" id="12_ayy70"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_yx04v"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_6llre")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_n7hit")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_87rmv")
+}],
+"loop": true,
+"name": &"default",
+"speed": 3.0
+}]
+
+[node name="Creditos" type="Node2D"]
+script = ExtResource("1_jbth2")
+
+[node name="Background" type="ColorRect" parent="."]
+offset_right = 1280.0
+offset_bottom = 720.0
+color = Color(0.143272, 0.1357, 0.59, 1)
+
+[node name="BackGift" type="AnimatedSprite2D" parent="Background"]
+position = Vector2(640, 361.5)
+scale = Vector2(1, 1.00417)
+sprite_frames = SubResource("SpriteFrames_yx04v")
+autoplay = "default"
+
+[node name="ColorRect" type="ColorRect" parent="Background"]
+modulate = Color(0.85098, 0.85098, 0.85098, 0.431373)
+layout_mode = 0
+offset_right = 1282.0
+offset_bottom = 723.0
+color = Color(0.141176, 0.137255, 0.588235, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Background"]
+clip_contents = true
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -581.0
+offset_top = -0.000244141
+offset_right = 29.0
+offset_bottom = 2721.0
+grow_horizontal = 0
+grow_vertical = 2
+scale = Vector2(0.7, 0.7)
+alignment = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Background/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0.662745, 0.662745, 0.662745, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 4
+theme_override_constants/shadow_offset_y = 3
+theme_override_constants/shadow_outline_size = 17
+theme_override_constants/outline_size = 20
+theme_override_fonts/normal_font = ExtResource("4_rdkjv")
+theme_override_font_sizes/normal_font_size = 45
+text = "			  		 ART
+	  Ana Rodríguez Louro
+
+
+
+		   PROGRAMMING
+   Mario Passaretti Pereira
+	 Sandra Pallín Ferreira
+
+
+
+				  DESIGN
+   Mario Passaretti Pereira
+	 Sandra Pallín Ferreira
+	  Ana Rodríguez Louro"
+fit_content = true
+scroll_active = false
+
+[node name="TextureRect" type="TextureRect" parent="Background/VBoxContainer"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+texture = ExtResource("4_jmn7x")
+
+[node name="TextureRect2" type="TextureRect" parent="Background/VBoxContainer"]
+layout_mode = 2
+texture = ExtResource("4_jmn7x")
+
+[node name="Button_menu" type="TextureButton" parent="Background/VBoxContainer"]
+layout_mode = 2
+toggle_mode = true
+texture_normal = ExtResource("5_vhm71")
+texture_pressed = ExtResource("6_r2op5")
+texture_hover = ExtResource("7_tm150")
+stretch_mode = 3
+
+[node name="Label" type="Label" parent="Background/VBoxContainer/Button_menu"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.249
+anchor_top = 0.168
+anchor_right = 0.741
+anchor_bottom = 0.832
+offset_left = 0.110001
+offset_top = 2.85706
+offset_right = 5.98999
+offset_bottom = 2.85706
+text = "MENU"
+label_settings = ExtResource("8_5nmg2")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureRect4" type="TextureRect" parent="Background/VBoxContainer"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+texture = ExtResource("10_4fyio")
+
+[node name="TextureRect3" type="TextureRect" parent="Background/VBoxContainer"]
+layout_mode = 2
+texture = ExtResource("11_odu3m")
+stretch_mode = 5
+
+[node name="TextureRect" type="TextureRect" parent="Background"]
+offset_right = 563.0
+offset_bottom = 722.0
+texture = ExtResource("12_ayy70")
+expand_mode = 1
+stretch_mode = 4
+
+[connection signal="pressed" from="Background/VBoxContainer/Button_menu" to="." method="_on_button_menu_pressed"]
